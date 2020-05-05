@@ -1,0 +1,1482 @@
+{
+  "train_250": {
+    "id": "250",
+    "text": "How many Aldi stores are there?",
+    "extended_amr": "(s / store\n      :mod (c / company\n            :name (n / name\n                  :op1 \"Aldi\"))\n      :quant (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"aldi\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Aldi\")))\n\n",
+    "relations": [
+      "dbo:numberOfLocations"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?number WHERE { res:Aldi dbo:numberOfLocations ?number }"
+  },
+  "train_251": {
+    "id": "251",
+    "text": "What is the longest river in the world?",
+    "extended_amr": "(h / have-degree-91\n      :ARG2 (l / long-03)\n      :ARG3 (m / most)\n      :ARG5 (r / river\n            :location (w / world))\n      :rel (r2 / river\n            :domain (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"river\"\n\t\t\t\t:id \"r2\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/River\")))\n\n",
+    "relations": [
+      "dbo:length"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?uri WHERE { ?uri rdf:type dbo:BodyOfWater ; dbo:length ?length } ORDER BY DESC(?length) LIMIT 1"
+  },
+  "train_252": {
+    "id": "252",
+    "text": "When was John Adams born?",
+    "extended_amr": "(b / bear-02\n      :ARG1 (p / person\n            :name (n / name\n                  :op1 \"John\"\n                  :op2 \"Adams\"))\n      :time (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"john adams\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/John_Adams\")))\n\n",
+    "relations": [
+      "dbo:birthDate"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:John_Adams dbo:birthDate ?date }"
+  },
+  "train_253": {
+    "id": "253",
+    "text": "Which companies produce hovercrafts?",
+    "extended_amr": "(p / produce-01\n      :ARG0 (c / company\n            :mod (a / amr-unknown))\n      :ARG1 (h / hovercraft)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"companies\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Company\")))\n\n",
+    "relations": [
+      "dbo:product"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Company ; dbo:product res:Hovercraft }"
+  },
+  "train_254": {
+    "id": "254",
+    "text": "Who was the wife of U.S. president Lincoln?",
+    "extended_amr": "(p / person\n      :ARG0-of (h / have-rel-role-91\n            :ARG1 (p3 / person\n                  :ARG0-of (h2 / have-org-role-91\n                        :ARG1 (c / country\n                              :name (n / name\n                                    :op1 \"United\"\n                                    :op2 \"States\"))\n                        :ARG2 (p2 / president))\n                  :name (n2 / name\n                        :op1 \"A.Lincoln\"))\n            :ARG2 (w / wife))\n      :domain (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"u.s. president lincoln\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Abraham_Lincoln\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"president\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/President\")))\n\n",
+    "relations": [
+      "dbo:spouse"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Abraham_Lincoln dbo:spouse ?uri }"
+  },
+  "train_255": {
+    "id": "255",
+    "text": "Which species does an elephant belong?",
+    "extended_amr": "(b / belong-01\n      :ARG0 (e / elephant)\n      :ARG1 (s / specie\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"elephant\"\n\t\t\t\t:id \"e\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Elephant\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"species\"\n\t\t\t\t:id \"s\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Species\")))\n\n",
+    "relations": [
+      "dbp:species"
+    ],
+    "sparql": "PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?species WHERE { dbr:Elephant dbp:species ?species }"
+  },
+  "train_256": {
+    "id": "256",
+    "text": "How many people live in the capital of Australia?",
+    "extended_amr": "(l / live-01\n      :ARG0 (p / person\n            :quant (a / amr-unknown))\n      :location (c / city\n            :ARG0-of (h / have-org-role-91\n                  :ARG2 (c3 / capital)))\n      :rel (c2 / country\n            :name (n / name\n                  :op1 \"Australia\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"capital of australia\"\n\t\t\t\t:id \"c3\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Canberra\")))\n\n",
+    "relations": [
+      "dbo:populationTotal",
+      "dbo:capital"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Australia dbo:capital ?x . ?x dbo:populationTotal ?num }"
+  },
+  "train_257": {
+    "id": "257",
+    "text": "In which ancient empire could you pay with cocoa beans?",
+    "extended_amr": "(p / possible-01\n      :ARG1 (p2 / pay-01\n            :ARG0 (y / you)\n            :instrument (b / bean\n                  :mod (c / cocoa))\n            :location (e / empire\n                  :mod (a2 / ancient)\n                  :mod (a / amr-unknown)))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"cocoa beans\"\n\t\t\t\t:id \"b\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Cocoa_bean\")))\n\n",
+    "relations": [
+      "dbo:currency"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:currency res:Cocoa_bean }"
+  },
+  "train_258": {
+    "id": "258",
+    "text": "How many theories did Albert Einstein come up with?",
+    "extended_amr": "(c / come-up-11\n      :ARG0 (p / person\n            :name (n / name\n                  :op1 \"Albert\"\n                  :op2 \"Einstein\"))\n      :ARG1 (t / theory\n            :quant (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"albert einstein\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Albert_Einstein\")))\n\n",
+    "relations": [
+      "dbo:knownFor"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT (COUNT(?uri) AS ?count) WHERE { dbr:Albert_Einstein dbo:knownFor ?uri }"
+  },
+  "train_259": {
+    "id": "259",
+    "text": "Who composed the soundtrack for Cameron's Titanic?",
+    "extended_amr": "(c / compose-02\n      :ARG0 (a / amr-unknown)\n      :ARG1 (s / soundtrack\n            :beneficiary (w / work-of-art\n                  :name (n2 / name\n                        :op1 \"Titanic\")\n                  :poss (p / person\n                        :name (n / name\n                              :op1 \"Cameron\"))))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"cameron's titanic\"\n\t\t\t\t:id \"w\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Titanic_(1997_film)\")))\n\n",
+    "relations": [
+      "dbo:musicComposer"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Titanic_(1997_film)> dbo:musicComposer ?uri }"
+  },
+  "train_260": {
+    "id": "260",
+    "text": "Give me the runtime of Toy Story.",
+    "extended_amr": "(g / give-01\n      :ARG0 (y / you)\n      :ARG1 (r / runtime\n            :duration-of (w / work-of-art\n                  :name (n / name\n                        :op1 \"Toy\"\n                        :op2 \"Story\")))\n      :ARG2 (i / i)\n      :mode imperative\n      :mode imperative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"toy story\"\n\t\t\t\t:id \"w\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Toy_Story\")))\n\n",
+    "relations": [
+      "dbo:runtime"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?runtime WHERE { res:Toy_Story dbo:runtime ?runtime }"
+  },
+  "train_262": {
+    "id": "262",
+    "text": "With how many countries Iran has borders?",
+    "extended_amr": "(h / have-03\n      :ARG0 (c2 / country\n            :name (n / name\n                  :op1 \"Iran\"))\n      :ARG1 (b / border-01\n            :ARG1 c2\n            :ARG2 (c / country\n                  :quant (a / amr-unknown)))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"iran\"\n\t\t\t\t:id \"c2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Iran\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"countries\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Country\")))\n\n",
+    "relations": [
+      "dbp:borders"
+    ],
+    "sparql": "PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?border WHERE { dbr:Geography_of_Iran dbp:borders ?border } LIMIT 8"
+  },
+  "train_263": {
+    "id": "263",
+    "text": "Which electronics companies were founded in Beijing?",
+    "extended_amr": "(f / found-01\n      :ARG1 (c / company\n            :mod (e / electronic)\n            :mod (a / amr-unknown))\n      :location (c2 / city\n            :name (n / name\n                  :op1 \"Beijing\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"beijing\"\n\t\t\t\t:id \"c2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Beijing\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"companies\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Company\")))\n\n",
+    "relations": [
+      "dbo:industry",
+      "dbo:foundationPlace"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Company ; dbo:industry res:Electronics ; dbo:foundationPlace res:Beijing }"
+  },
+  "train_264": {
+    "id": "264",
+    "text": "Who was the successor of John F. Kennedy?",
+    "extended_amr": "(p / person\n      :ARG0-of (s / succeed-02\n            :ARG1 (p2 / person\n                  :name (n / name\n                        :op1 \"John\"\n                        :op2 \"F.Kennedy\")))\n      :mod (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"john f. kennedy\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/John_F._Kennedy\")))\n\n",
+    "relations": [
+      "dbo:successor"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:John_F._Kennedy dbo:successor ?uri }"
+  },
+  "train_265": {
+    "id": "265",
+    "text": "Who is the mayor of Paris?",
+    "extended_amr": "(p / person\n      :ARG0-of (h / have-org-role-91\n            :ARG1 (c / city\n                  :name (n / name\n                        :op1 \"Paris\"))\n            :ARG2 (m / mayor))\n      :domain (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"paris\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Paris\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"mayor\"\n\t\t\t\t:id \"h\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Mayor\")))\n\n",
+    "relations": [
+      "dbo:mayor"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Paris dbo:mayor ?uri }"
+  },
+  "train_266": {
+    "id": "266",
+    "text": "Did Arnold Schwarzenegger attend a university?",
+    "extended_amr": "(a / attend-01\n      :ARG0 (p / person\n            :name (n / name\n                  :op1 \"Arnold\"\n                  :op2 \"Schwarzenegger\"))\n      :ARG1 (u / university)\n      :mode interrogative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"arnold schwarzenegger\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Arnold_Schwarzenegger\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"university\"\n\t\t\t\t:id \"u\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/University\")))\n\n",
+    "relations": [
+      "dbo:almaMater"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ASK WHERE { res:Arnold_Schwarzenegger dbo:almaMater ?x . ?x rdf:type dbo:University }"
+  },
+  "train_267": {
+    "id": "267",
+    "text": "Is James Bond married?",
+    "extended_amr": "(m / marry-01\n      :ARG1 (p / person\n            :name (n / name\n                  :op1 \"James\"\n                  :op2 \"Bond\"))\n      :mode interrogative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"james bond married\"\n\t\t\t\t:id \"m\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/James_Bond\")))\n\n",
+    "relations": [
+      "dbo:spouse"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:James_Bond dbo:spouse ?uri }"
+  },
+  "train_268": {
+    "id": "268",
+    "text": "Does the Isar flow into a lake?",
+    "extended_amr": "(f / flow-01\n      :ARG1 (r / river\n            :name (n / name\n                  :op1 \"Isar\"))\n      :destination (l / lake)\n      :mode interrogative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"isar\"\n\t\t\t\t:id \"r\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Isar\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"lake\"\n\t\t\t\t:id \"l\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Lake\")))\n\n",
+    "relations": [
+      "dbo:inflow"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ASK WHERE { ?x dbo:inflow res:Isar ; rdf:type dbo:Lake }"
+  },
+  "train_269": {
+    "id": "269",
+    "text": "Which Indian company has the most employees?",
+    "extended_amr": "(h / have-03\n      :ARG0 (c2 / company\n            :mod (c / country\n                  :name (n / name\n                        :op1 \"India\"))\n            :mod (a / amr-unknown))\n      :ARG1 (p / person\n            :ARG0-of (e / employ-01\n                  :ARG0 c2)\n            :ARG1-of (h2 / have-degree-91\n                  :ARG3 (m / most)))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"indian\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/India\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"company\"\n\t\t\t\t:id \"c2\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Company\")))\n\n",
+    "relations": [
+      "dbo:location",
+      "dbo:numberOfEmployees"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Company ; dbo:location res:India ; dbo:numberOfEmployees ?n } ORDER BY DESC(?n) OFFSET 0 LIMIT 1"
+  },
+  "train_270": {
+    "id": "270",
+    "text": "Who was John F. Kennedy's vice president?",
+    "extended_amr": "(p2 / president\n      :domain (a / amr-unknown)\n      :mod (v / vice)\n      :poss (p / person\n            :name (n / name\n                  :op1 \"John\"\n                  :op2 \"F.Kennedy\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"john f. kennedy's\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/John_F._Kennedy\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"vice president\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/VicePresident\")))\n\n",
+    "relations": [
+      "dbo:vicePresident"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:John_F._Kennedy dbo:vicePresident ?uri }"
+  },
+  "train_271": {
+    "id": "271",
+    "text": "Which country does the creator of Miffy come from?",
+    "extended_amr": "(c2 / come-01\n      :ARG1 (p / person\n            :ARG0-of (c3 / create-01\n                  :ARG1 (a2 / animal\n                        :name (n / name\n                              :op1 \"Miffy\"))))\n      :ARG3 (c / country\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"miffy\"\n\t\t\t\t:id \"a2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Miffy\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"country\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Country\")))\n\n",
+    "relations": [
+      "dbo:nationality",
+      "dbo:creator"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Miffy dbo:creator ?x . ?x dbo:nationality ?uri }"
+  },
+  "train_273": {
+    "id": "273",
+    "text": "In what city is the Heineken brewery?",
+    "extended_amr": "(b / be-located-at-91\n      :ARG1 (b2 / brewery\n            :mod (c2 / company\n                  :name (n / name\n                        :op1 \"Heineken\")))\n      :ARG2 (c / city\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"heineken brewery\"\n\t\t\t\t:id \"b2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Heineken\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"city\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/City\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"brewery\"\n\t\t\t\t:id \"b2\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Brewery\")))\n\n",
+    "relations": [
+      "dbo:locationCity",
+      "dbo:manufacturer"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Heineken dbo:manufacturer ?x . ?x dbo:locationCity ?uri }"
+  },
+  "train_274": {
+    "id": "274",
+    "text": "Is Barack Obama a democrat?",
+    "extended_amr": "(d / democrat\n      :domain (p / person\n            :name (n / name\n                  :op1 \"Barack\"\n                  :op2 \"Obama\"))\n      :mode interrogative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"barack obama\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Barack_Obama\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"democrat\"\n\t\t\t\t:id \"d\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Democratic_Party_(United_States)\")))\n\n",
+    "relations": [
+      "dbo:party"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Barack_Obama dbo:party <http://dbpedia.org/resource/Democratic_Party_(United_States)> }"
+  },
+  "train_275": {
+    "id": "275",
+    "text": "List the children of Margaret Thatcher.",
+    "extended_amr": "(l / list-01\n      :ARG0 (y / you)\n      :ARG1 (p / person\n            :ARG0-of (h / have-rel-role-91\n                  :ARG1 (p2 / person\n                        :name (n / name\n                              :op1 \"Margaret\"\n                              :op2 \"Thatcher\"))\n                  :ARG2 (c / child)))\n      :mode imperative\n      :mode imperative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"margaret thatcher\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Margaret_Thatcher\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"list\"\n\t\t\t\t:id \"l\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/List\")))\n\n",
+    "relations": [
+      "dbo:child"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Margaret_Thatcher dbo:child ?uri }"
+  },
+  "train_276": {
+    "id": "276",
+    "text": "From which region is the Melon de Bourgogne?",
+    "extended_amr": "(b / be-from-91\n      :ARG1 (x0 / Melon\n            :name (n / name\n                  :op1 \"De\"\n                  :op2 \"Bourgogne\"))\n      :ARG2 (r / region\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"melon de bourgogne\"\n\t\t\t\t:id \"x0\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Melon_de_Bourgogne\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"region\"\n\t\t\t\t:id \"r\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Region\")))\n\n",
+    "relations": [
+      "dbo:wineRegion"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Melon_de_Bourgogne dbo:wineRegion ?uri }"
+  },
+  "train_278": {
+    "id": "278",
+    "text": "how big is the total area of North Rhine- Westphalia?",
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?tarea WHERE { dbr:North_Rhine-Westphalia dbo:areaTotal ?tarea }",
+    "extended_amr": "(a2 / area\n      :ARG1-of (h / have-quant-91\n            :ARG2 (a / amr-unknown))\n      :mod (t / total)\n      :poss (s / state\n            :name (n / name\n                  :op1 \"North\"\n                  :op2 \"Rhine-Westphalia\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"north rhine-westphalia\"\n\t\t\t\t:id \"s\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/North_Rhine-Westphalia\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"area\"\n\t\t\t\t:id \"a2\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Area\")))\n\n",
+    "relations": [
+      "dbo:areaTotal"
+    ]
+  },
+  "train_279": {
+    "id": "279",
+    "text": "Which city has the most inhabitants?",
+    "extended_amr": "(h / have-03\n      :ARG0 (c / city\n            :mod (a / amr-unknown))\n      :ARG1 (p / person\n            :ARG0-of (i / inhabit-01\n                  :ARG1 c)\n            :ARG1-of (h2 / have-degree-91\n                  :ARG3 (m / most)))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"city\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/City\")))\n\n",
+    "relations": [
+      "dbo:populationTotal"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City ; dbo:populationTotal ?pop } ORDER BY DESC(?pop) OFFSET 0 LIMIT 1"
+  },
+  "train_280": {
+    "id": "280",
+    "text": "What is Donald Trump's main business?",
+    "extended_amr": "(b / business\n      :domain (a / amr-unknown)\n      :mod (m / main)\n      :poss (p / person\n            :name (n / name\n                  :op1 \"Donald\"\n                  :op2 \"Trump\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"donald trump's\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Donald_Trump\")))\n\n",
+    "relations": [
+      "dbo:owner"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?owner WHERE { ?owner dbo:owner dbr:Donald_Trump }"
+  },
+  "train_281": {
+    "id": "281",
+    "text": "When will start the final match of the football world cup 2018?",
+    "extended_amr": "(s / start-01\n      :ARG1 (m / match-03\n            :mod (f / final)\n            :subevent-of (g / game\n                  :mod (f2 / football)\n                  :name (n / name\n                        :op1 \"world\"\n                        :op2 \"cup\"\n                        :op3 \"2018\")))\n      :time (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"football world cup 2018\"\n\t\t\t\t:id \"g\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/2018_FIFA_World_Cup\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"football\"\n\t\t\t\t:id \"f2\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Soccer\")))\n\n",
+    "relations": [
+      "dbp:date"
+    ],
+    "sparql": "PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?Date WHERE { dbr:2018_FIFA_World_Cup dbp:date ?Date } ORDER BY DESC(?Date) LIMIT 1"
+  },
+  "train_282": {
+    "id": "282",
+    "text": "Which films did Stanley Kubrick direct?",
+    "extended_amr": "(d / direct-01\n      :ARG0 (p / person\n            :name (n / name\n                  :op1 \"Stanley\"\n                  :op2 \"Kubrick\"))\n      :ARG1 (f / film\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"stanley kubrick\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Stanley_Kubrick\")))\n\n",
+    "relations": [
+      "dbo:director"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:director res:Stanley_Kubrick }"
+  },
+  "train_283": {
+    "id": "283",
+    "text": "how much is the population  Iraq?",
+    "extended_amr": "(p / population\n      :mod (c / counrry\n            :name (n / name\n                  :op1 \"Iraq\"))\n      :quant (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"iraq\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Iraq\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"population\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Population\")))\n\n",
+    "relations": [
+      "dbo:populationTotal"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?pIraq WHERE { dbr:Iraq dbo:populationTotal ?pIraq }"
+  },
+  "train_284": {
+    "id": "284",
+    "text": "How many inhabitants does the largest city in Canada have?",
+    "extended_amr": "(h2 / have-03\n      :ARG0 (c / city\n            :ARG1-of (h / have-degree-91\n                  :ARG2 (l / large))\n            :location (c2 / country\n                  :name (n / name\n                        :op1 \"canada\")))\n      :ARG1 (p / person\n            :ARG0-of (i / inhabit-01\n                  :ARG1 c)\n            :quant (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"canada\"\n\t\t\t\t:id \"c2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Canada\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"city\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/City\")))\n\n",
+    "relations": [
+      "dbo:largestCity",
+      "dbo:populationTotal"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Canada dbo:largestCity ?city . ?city dbo:populationTotal ?num }"
+  },
+  "train_285": {
+    "id": "285",
+    "text": "Who is the mayor of the capital of French Polynesia?",
+    "extended_amr": "(p / person\n      :ARG0-of (h2 / have-org-role-91\n            :ARG1 (c / city\n                  :ARG0-of (h / have-org-role-91\n                        :ARG1 (c2 / country\n                              :name (n / name\n                                    :op1 \"French\"\n                                    :op2 \"Polynesia\"))\n                        :ARG2 (c3 / capital)))\n            :ARG2 (m / mayor))\n      :domain (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"french polynesia\"\n\t\t\t\t:id \"c2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/French_Polynesia\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"mayor\"\n\t\t\t\t:id \"m\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Mayor\")))\n\n",
+    "relations": [
+      "dbo:mayor",
+      "dbo:capital"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:French_Polynesia dbo:capital ?x . ?x dbo:mayor ?uri }"
+  },
+  "train_286": {
+    "id": "286",
+    "text": "Give me all actors starring in movies directed by William Shatner.",
+    "extended_amr": "(g / give-01\n      :ARG0 (y / you)\n      :ARG1 (p / person\n            :ARG0-of (s / star-01\n                  :ARG2 (m / movie\n                        :ARG1-of (d / direct-01\n                              :ARG0 (p2 / person\n                                    :name (n / name\n                                          :op1 \"William\"\n                                          :op2 \"Shatner\")))))\n            :ARG0-of (a2 / act-01)\n            :mod (a / all))\n      :ARG2 (i / i)\n      :mode imperative\n      :mode imperative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"william shatner\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/William_Shatner\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"actors\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Actor\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"movies\"\n\t\t\t\t:id \"m\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Film\")))\n\n",
+    "relations": [
+      "dbo:starring",
+      "dbo:director"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?x dbo:director res:William_Shatner ; dbo:starring ?uri }"
+  },
+  "train_287": {
+    "id": "287",
+    "text": "How tall is Claudia Schiffer?",
+    "extended_amr": "(h / have-quant-91\n      :ARG1 (p / person\n            :name (n / name\n                  :op1 \"Claudia\"\n                  :op2 \"Schiffer\"))\n      :ARG2 (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"claudia schiffer\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Claudia_Schiffer\")))\n\n",
+    "relations": [
+      "dbo:height"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?height WHERE { res:Claudia_Schiffer dbo:height ?height }"
+  },
+  "train_288": {
+    "id": "288",
+    "text": "how much is the population densty rank of germany?",
+    "extended_amr": "(r / rank-01\n      :ARG1 (d / density\n            :mod (p / populate-01\n                  :ARG1 (c / country\n                        :name (n / name\n                              :op1 \"Germany\"))))\n      :ARG2 (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"germany\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Germany\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"population\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Population\")))\n\n",
+    "relations": [
+      "dbp:populationDensityRank"
+    ],
+    "sparql": "PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?rank WHERE { dbr:Germany dbp:populationDensityRank ?rank }"
+  },
+  "train_289": {
+    "id": "289",
+    "text": "What is the highest mountain in Italy?",
+    "extended_amr": "(m3 / mountain\n      :ARG1-of (h / have-degree-91\n            :ARG3 (m2 / most)\n            :ARG5 (m / mountain))\n      :location (c / country\n            :name (n / name\n                  :op1 \"Italy\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"italy\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Italy\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"mountain\"\n\t\t\t\t:id \"m3\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Mountain\")))\n\n",
+    "relations": [
+      "dbo:elevation",
+      "dbo:locatedInArea"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Mountain ; dbo:locatedInArea res:Italy ; dbo:elevation ?num } ORDER BY DESC(?num) OFFSET 0 LIMIT 1"
+  },
+  "train_290": {
+    "id": "290",
+    "text": "List all games by GMT.",
+    "extended_amr": "(l / list-01\n      :ARG0 (y / you)\n      :ARG1 (g / game\n            :mod (a / all)\n            :prep-by (c / company\n                  :ARG1-of (m / mean-01\n                        :ARG2 (c2 / company))\n                  :name (n / name\n                        :op1 \"Gene\"\n                        :op2 \"Mike\"\n                        :op3 \"Terry\")))\n      :mode imperative\n      :mode imperative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"gmt\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/GMT_Games\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"list\"\n\t\t\t\t:id \"l\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/List\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"games\"\n\t\t\t\t:id \"g\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Game\")))\n\n",
+    "relations": [
+      "dbo:publisher"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:publisher res:GMT_Games }"
+  },
+  "train_291": {
+    "id": "291",
+    "text": "What is the official language of Suriname?",
+    "extended_amr": "(l / language\n      :domain (a / amr-unknown)\n      :mod (o / official)\n      :poss (c / country\n            :name (n / name\n                  :op1 \"Suriname\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"suriname\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Suriname\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"language\"\n\t\t\t\t:id \"l\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Language\")))\n\n",
+    "relations": [
+      "dbo:officialLanguage"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Suriname dbo:officialLanguage ?uri }"
+  },
+  "train_292": {
+    "id": "292",
+    "text": "In which city did Nikos Kazantzakis die?",
+    "extended_amr": "(d / die-01\n      :ARG1 (p / person\n            :name (n / name\n                  :op1 \"Nikos\"\n                  :op2 \"Kazantzakis\"))\n      :location (c / city\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"nikos kazantzakis\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Nikos_Kazantzakis\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"city\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/City\")))\n\n",
+    "relations": [
+      "dbo:deathPlace"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Nikos_Kazantzakis dbo:deathPlace ?uri . ?uri rdf:type dbo:Town }"
+  },
+  "train_293": {
+    "id": "293",
+    "text": "What is in a chocolate chip cookie?",
+    "extended_amr": "(c3 / cookie\n      :consist-of (a / amr-unknown)\n      :mod (c2 / chip\n            :consist-of (c / chocolate))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"chocolate chip cookie\"\n\t\t\t\t:id \"c3\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Chocolate_chip_cookie\")))\n\n",
+    "relations": [
+      "dbo:ingredient"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Chocolate_chip_cookie dbo:ingredient ?uri }"
+  },
+  "train_294": {
+    "id": "294",
+    "text": "In which country is the Limerick Lake?",
+    "extended_amr": "(b / be-located-at-91\n      :ARG1 (l / lake\n            :name (n / name\n                  :op1 \"Limerick\"\n                  :op2 \"Lake\"))\n      :ARG2 (c / country\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"limerick lake\"\n\t\t\t\t:id \"l\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Limerick_Lake\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"lake\"\n\t\t\t\t:id \"l\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Lake\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"country\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Country\")))\n\n",
+    "relations": [
+      "dbo:country"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Limerick_Lake dbo:country ?uri }"
+  },
+  "train_295": {
+    "id": "295",
+    "text": "Give me all video games published by Mean Hamster Software.",
+    "extended_amr": "(g / give-01\n      :ARG0 (y / you)\n      :ARG1 (g2 / game\n            :ARG1-of (p / publish-01\n                  :ARG0 (c / company\n                        :name (n / name\n                              :op1 \"Mean\"\n                              :op2 \"Hamster\"\n                              :op3 \"Software\")))\n            :mod (v / video)\n            :mod (a / all))\n      :ARG2 (i / i)\n      :mode imperative\n      :mode imperative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"mean hamster software\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Mean_Hamster_Software\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"game\"\n\t\t\t\t:id \"g2\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Software\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"video games\"\n\t\t\t\t:id \"g2\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/VideoGame\")))\n\n",
+    "relations": [
+      "dbo:publisher"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:VideoGame ; dbo:publisher res:Mean_Hamster_Software }"
+  },
+  "train_296": {
+    "id": "296",
+    "text": "Give me all members of Prodigy.",
+    "extended_amr": "(g / give-01\n      :ARG0 (y / you)\n      :ARG1 (p / person\n            :ARG0-of (h / have-org-role-91\n                  :ARG1 (c / company\n                        :name (n / name\n                              :op1 \"Prodigy\"))\n                  :ARG2 (m / member))\n            :mod (a / all))\n      :ARG2 (i / i)\n      :mode imperative\n      :mode imperative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"prodigy\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/The_Prodigy\")))\n\n",
+    "relations": [
+      "dbo:bandMember"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Prodigy dbo:bandMember ?uri }"
+  },
+  "train_297": {
+    "id": "297",
+    "text": "In which time zone is Rome?",
+    "extended_amr": "(b / be-located-at-91\n      :ARG1 (c / city\n            :name (n / name\n                  :op1 \"rome\"))\n      :ARG2 (z / zone\n            :mod (t / time)\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"rome\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Rome\")))\n\n",
+    "relations": [
+      "dbo:timeZone"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Rome dbo:timeZone ?uri }"
+  },
+  "train_298": {
+    "id": "298",
+    "text": "How high is the lighthouse in Colombo?",
+    "extended_amr": "(h / have-quant-91\n      :ARG1 (l / lighthouse\n            :location (c / city\n                  :name (n / name\n                        :op1 \"Colombo\")))\n      :ARG2 (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"colombo\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Colombo\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"lighthouse\"\n\t\t\t\t:id \"l\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Lighthouse\")))\n\n",
+    "relations": [
+      "dbo:height"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Colombo_Lighthouse dbo:height ?num }"
+  },
+  "train_299": {
+    "id": "299",
+    "text": "Who are the writers of the Wall album of Pink Floyd?",
+    "extended_amr": "(p / person\n      :ARG0-of (w / write-01\n            :ARG1 (a2 / album\n                  :name (n / name\n                        :op1 \"Wall\")\n                  :poss (t / team\n                        :name (n2 / name\n                              :op1 \"Pink\"\n                              :op2 \"Floyd\"))))\n      :domain (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"wall album\"\n\t\t\t\t:id \"a2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/The_Wall\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"pink floyd\"\n\t\t\t\t:id \"t\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Pink_Floyd\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"album\"\n\t\t\t\t:id \"a2\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Album\")\n\t\t:entity (all3/ linked_entity\n\t\t\t\t:surface_form \"writers\"\n\t\t\t\t:id \"w\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Writer\")))\n\n",
+    "relations": [
+      "dbp:writer"
+    ],
+    "sparql": "PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?writers WHERE { dbr:The_Wall dbp:writer ?writers }"
+  },
+  "train_300": {
+    "id": "300",
+    "text": "Who is the mayor of Rotterdam?",
+    "extended_amr": "(p / person\n      :ARG0-of (h / have-org-role-91\n            :ARG1 (c / city\n                  :name (n / name\n                        :op1 \"Rotterdam\"))\n            :ARG2 (m / mayor))\n      :domain (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"rotterdam\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Rotterdam\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"mayor\"\n\t\t\t\t:id \"h\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Mayor\")))\n\n",
+    "relations": [
+      "dbo:leaderName"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Rotterdam dbo:leaderName ?uri }"
+  },
+  "train_301": {
+    "id": "301",
+    "text": "What is the largest city in Australia?",
+    "extended_amr": "(c / city\n      :ARG1-of (h / have-degree-91\n            :ARG2 (l / large)\n            :ARG3 (m / most)\n            :ARG5 (c2 / city\n                  :location (c3 / country\n                        :name (n / name\n                              :op1 \"Australia\"))))\n      :domain (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"australia\"\n\t\t\t\t:id \"c2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Australia\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"city\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/City\")))\n\n",
+    "relations": [
+      "dbo:largestCity"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Australia dbo:largestCity ?uri }"
+  },
+  "train_302": {
+    "id": "302",
+    "text": "Who was married to president Chirac?",
+    "extended_amr": "(m / marry-01\n      :ARG1 (a / amr-unknown)\n      :ARG2 (p / person\n            :ARG0-of (h / have-org-role-91\n                  :ARG2 (p2 / president))\n            :name (n / name\n                  :op1 \"Chirac\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"president chirac\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Jacques_Chirac\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"president\"\n\t\t\t\t:id \"h\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/President\")))\n\n",
+    "relations": [
+      "dbo:spouse"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Jacques_Chirac dbo:spouse ?uri }"
+  },
+  "train_303": {
+    "id": "303",
+    "text": "What form of government is found in South Africa?",
+    "extended_amr": "(f2 / find-01\n      :ARG1 (g / government-organization\n            :ARG0-of (g2 / govern-01)\n            :mod (f / form\n                  :mod (a / amr-unknown)))\n      :location (c / country\n            :name (n / name\n                  :op1 \"South\"\n                  :op2 \"Africa\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"south africa\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/South_Africa\")))\n\n",
+    "relations": [
+      "dbo:governmentType"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?uri WHERE { dbr:South_Africa dbo:governmentType ?uri }"
+  },
+  "train_304": {
+    "id": "304",
+    "text": "How high is the Yokohama Marine Tower?",
+    "extended_amr": "(h / have-quant-91\n      :ARG1 (f / facility\n            :name (n / name\n                  :op1 \"Yokohama\"\n                  :op2 \"Marine\"\n                  :op3 \"Tower\"))\n      :ARG2 (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"yokohama marine tower\"\n\t\t\t\t:id \"f\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Yokohama_Marine_Tower\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"amr-unknown\"\n\t\t\t\t:id \"a\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Tower\")))\n\n",
+    "relations": [
+      "dbo:height"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Yokohama_Marine_Tower dbo:height ?num }"
+  },
+  "train_305": {
+    "id": "305",
+    "text": "Which holidays are celebrated around the world?",
+    "extended_amr": "(c / celebrate-01\n      :ARG1 (h / holiday\n            :mod (a / amr-unknown))\n      :location (a2 / around\n            :op1 (w / world))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"holidays\"\n\t\t\t\t:id \"h\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Holiday\")))\n\n",
+    "relations": [],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Holiday }"
+  },
+  "train_306": {
+    "id": "306",
+    "text": "Who is the tallest basketball player?",
+    "extended_amr": "(p / person\n      :ARG0-of (p2 / play-01\n            :ARG1 (b / basketball))\n      :ARG1-of (h / have-degree-91\n            :ARG2 (t / tall)\n            :ARG3 (m / most))\n      :domain (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"basketball player\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/BasketballPlayer\")))\n\n",
+    "relations": [
+      "dbo:height"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:BasketballPlayer ; dbo:height ?num } ORDER BY DESC(?num) OFFSET 0 LIMIT 1"
+  },
+  "train_307": {
+    "id": "307",
+    "text": "How many languages are spoken in Turkmenistan?",
+    "extended_amr": "(s / speak-01\n      :ARG3 (l / language\n            :quant (a / amr-unknown))\n      :location (c / country\n            :name (n / name\n                  :op1 \"Turkmenistan\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"turkmenistan\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Turkmenistan\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"languages\"\n\t\t\t\t:id \"l\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Language\")))\n\n",
+    "relations": [
+      "dbo:language"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?x) AS ?c) WHERE { res:Turkmenistan dbo:language ?x }"
+  },
+  "train_308": {
+    "id": "308",
+    "text": "Did Che Guevara have children?",
+    "extended_amr": "(h / have-03\n      :ARG0 (p / person\n            :name (n / name\n                  :op1 \"Che\"\n                  :op2 \"Guevara\"))\n      :ARG1 (c / child)\n      :mode interrogative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"che guevara\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Che_Guevara\")))\n\n",
+    "relations": [
+      "dbo:child"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Che_Guevara dbo:child ?uri }"
+  },
+  "train_309": {
+    "id": "309",
+    "text": "Did Kaurism\u00e4ki ever win the Grand Prix at Cannes?",
+    "extended_amr": "(w / win-01\n      :ARG0 (p / person\n            :name (n / name\n                  :op1 \"Kaurism\u00e4ki\"))\n      :ARG1 (a / award\n            :name (n2 / name\n                  :op1 \"Grand\"\n                  :op2 \"Prix\"))\n      :location (c / city\n            :name (n3 / name\n                  :op1 \"Cannes\"))\n      :mode interrogative\n      :time (e / ever)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"kaurism\u00e4ki\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Mika_Kaurism\u00c3\u00a4ki\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"cannes\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Cannes\")))\n\n",
+    "relations": [
+      "dbo:award"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Aki_Kaurism\u00e4ki dbo:award <http://dbpedia.org/resource/Grand_Prix_(Cannes_Film_Festival)> }"
+  },
+  "train_310": {
+    "id": "310",
+    "text": "To which party does the mayor of Paris belong?",
+    "extended_amr": "(b / belong-01\n      :ARG0 (p2 / person\n            :ARG0-of (h / have-org-role-91\n                  :ARG1 (c / city\n                        :name (n / name\n                              :op1 \"Paris\"))\n                  :ARG2 (m / mayor)))\n      :ARG1 (p / party\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"paris\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Paris\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"mayor\"\n\t\t\t\t:id \"h\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Mayor\")))\n\n",
+    "relations": [
+      "dbo:mayor",
+      "dbo:party"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Paris dbo:mayor ?x . ?x dbo:party ?uri }"
+  },
+  "train_311": {
+    "id": "311",
+    "text": "Who is the Formula 1 race driver with the most races?",
+    "extended_amr": "(h / have-03\n      :ARG1 (r2 / race-02\n            :ARG0 (p / person\n                  :ARG0-of h\n                  :ARG0-of (d / drive-01)\n                  :domain (a / amr-unknown)\n                  :mod (r / race\n                        :name (n / name\n                              :op1 \"Formula\"\n                              :op2 \"1\")))\n            :ARG1-of (h2 / have-degree-91\n                  :ARG3 (m / most)))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"formula 1\"\n\t\t\t\t:id \"r\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Formula_One\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"race\"\n\t\t\t\t:id \"r2\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Race\")))\n\n",
+    "relations": [
+      "dbo:races"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:FormulaOneRacer ; dbo:races ?x } ORDER BY DESC(?x) OFFSET 0 LIMIT 1"
+  },
+  "train_312": {
+    "id": "312",
+    "text": "What country is Sitecore from?",
+    "extended_amr": "(b / be-from-91\n      :ARG1 (c2 / company\n            :name (n / name\n                  :op1 \"Sitecore\"))\n      :ARG2 (c / country\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"sitecore\"\n\t\t\t\t:id \"c2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Sitecore\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"country\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Country\")))\n\n",
+    "relations": [
+      "dbo:foundationPlace"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Sitecore dbo:foundationPlace ?uri }"
+  },
+  "train_313": {
+    "id": "313",
+    "text": "Give me the birth place of Frank Sinatra.",
+    "extended_amr": "(g / give-01\n      :ARG0 (y / you)\n      :ARG1 (p / place\n            :location-of (b / bear-02\n                  :ARG1 (p2 / person\n                        :name (n / name\n                              :op1 \"Frank\"\n                              :op2 \"Sinatra\"))))\n      :ARG2 (i / i)\n      :mode imperative\n      :mode imperative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"frank sinatra\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Frank_Sinatra\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"place\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Place\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"birth\"\n\t\t\t\t:id \"b\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Birth\")))\n\n",
+    "relations": [
+      "dbo:birthPlace"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?place WHERE { res:Frank_Sinatra dbo:birthPlace ?place }"
+  },
+  "train_314": {
+    "id": "314",
+    "text": "Is Christian Bale starring in Velvet Goldmine?",
+    "extended_amr": "(s / star-01\n      :ARG1 (p / person\n            :name (n / name\n                  :op1 \"Christian\"\n                  :op2 \"Bale\"))\n      :ARG2 (w / work-of-art\n            :name (n2 / name\n                  :op1 \"Velvet\"\n                  :op2 \"Goldmine\"))\n      :mode interrogative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"christian bale\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Christian_Bale\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"velvet goldmine\"\n\t\t\t\t:id \"w\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Velvet_Goldmine\")))\n\n",
+    "relations": [
+      "dbo:starring"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Velvet_Goldmine dbo:starring res:Christian_Bale }"
+  },
+  "train_315": {
+    "id": "315",
+    "text": "Who is the son of Sonny and Cher?",
+    "extended_amr": "(h / have-rel-role-91\n      :ARG0 (a / amr-unknown)\n      :ARG1 (a2 / and\n            :op1 (p / person\n                  :name (n / name\n                        :op1 \"Sonny\"))\n            :op2 (p2 / person\n                  :name (n2 / name\n                        :op1 \"Cher\")))\n      :ARG2 (s / son)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"sonny and cher\"\n\t\t\t\t:id \"a2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Sonny_&_Cher\")))\n\n",
+    "relations": [
+      "dbo:parent"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:parent res:Cher ; dbo:parent res:Sonny_Bono }"
+  },
+  "train_316": {
+    "id": "316",
+    "text": "How many ethnic groups live in Slovenia?",
+    "extended_amr": "(l / live-01\n      :ARG0 (g / group\n            :mod (e / ethnic)\n            :quant (a / amr-unknown))\n      :location (c / country\n            :name (n / name\n                  :op1 \"Slovenia\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"slovenia\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Slovenia\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"ethnic groups\"\n\t\t\t\t:id \"g\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/EthnicGroup\")))\n\n",
+    "relations": [
+      "dbo:ethnicGroup"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { res:Slovenia dbo:ethnicGroup ?uri }"
+  },
+  "train_317": {
+    "id": "317",
+    "text": "What is the capital of Cameroon?",
+    "extended_amr": "(c2 / city\n      :ARG0-of (h / have-org-role-91\n            :ARG1 (c3 / country\n                  :name (n / name\n                        :op1 \"Cameroon\"))\n            :ARG2 (c / capital))\n      :domain (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"cameroon\"\n\t\t\t\t:id \"c3\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Cameroon\")))\n\n",
+    "relations": [
+      "dbo:capital"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Cameroon dbo:capital ?uri }"
+  },
+  "train_318": {
+    "id": "318",
+    "text": "Was Natalie Portman born in the United States?",
+    "extended_amr": "(b / bear-02\n      :ARG1 (p / person\n            :name (n / name\n                  :op1 \"Natalie\"\n                  :op2 \"Portman\"))\n      :location (c / country\n            :name (n2 / name\n                  :op1 \"United\"\n                  :op2 \"States\"))\n      :mode interrogative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"natalie portman\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Natalie_Portman\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"united states\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/United_States\")))\n\n",
+    "relations": [
+      "dbo:birthPlace",
+      "dbo:country"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Natalie_Portman dbo:birthPlace ?city . ?city dbo:country res:United_States }"
+  },
+  "train_319": {
+    "id": "319",
+    "text": "How many pages does War and Peace have?",
+    "extended_amr": "(h / have-03\n      :ARG0 (b / book\n            :name (n / name\n                  :op1 \"War\"\n                  :op2 \"And\"\n                  :op3 \"Peace\"))\n      :ARG1 (p / page\n            :quant (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"war and peace\"\n\t\t\t\t:id \"b\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/War_and_Peace\")))\n\n",
+    "relations": [
+      "dbo:numberOfPages"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?n WHERE { res:War_and_Peace dbo:numberOfPages ?n }"
+  },
+  "train_320": {
+    "id": "320",
+    "text": "Who is the oldest child of Meryl Streep?",
+    "extended_amr": "(p / person\n      :ARG0-of (h2 / have-rel-role-91\n            :ARG1 (p2 / person\n                  :name (n / name\n                        :op1 \"Meryl\"\n                        :op2 \"Streep\"))\n            :ARG2 (c / child\n                  :ARG1-of (h / have-degree-91\n                        :ARG2 (o / old)\n                        :ARG3 (m / most))))\n      :domain (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"meryl streep\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Meryl_Streep\")))\n\n",
+    "relations": [
+      "dbo:child",
+      "dbo:birthDate"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Meryl_Streep dbo:child ?uri . ?uri dbo:birthDate ?d } ORDER BY ASC(?d) OFFSET 0 LIMIT 1"
+  },
+  "train_321": {
+    "id": "321",
+    "text": "Which television shows were created by Walt Disney?",
+    "extended_amr": "(c / create-01\n      :ARG0 (p / person\n            :name (n / name\n                  :op1 \"Walt\"\n                  :op2 \"Disney\"))\n      :ARG1 (s / show\n            :medium (t / television)\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"walt disney\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Walt_Disney\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"television shows\"\n\t\t\t\t:id \"s\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/TelevisionShow\")))\n\n",
+    "relations": [
+      "dbo:creator"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:TelevisionShow ; dbo:creator res:Walt_Disney }"
+  },
+  "train_322": {
+    "id": "322",
+    "text": "What does IYCM stand for?",
+    "extended_amr": "(s2 / stand-08\n      :ARG0 (s / string-entity\n            :value \"IYCM\")\n      :ARG1 (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"iycm\"\n\t\t\t\t:id \"x0\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/International_University_of_Management\")))\n\n",
+    "relations": [
+      "dbo:abbreviation"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:abbreviation \"IYCM\" }"
+  },
+  "train_323": {
+    "id": "323",
+    "text": "Which types of grapes grow in Oregon?",
+    "extended_amr": "(g2 / grow-03\n      :ARG1 (g / grape\n            :mod (a / amr-uknown))\n      :location (s / state\n            :name (n / name\n                  :op1 \"Oregon\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"oregon\"\n\t\t\t\t:id \"s\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Oregon\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"grape\"\n\t\t\t\t:id \"g\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Type\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"grapes\"\n\t\t\t\t:id \"g\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Grape\")))\n\n",
+    "relations": [
+      "dbo:growingGrape"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Oregon_wine dbo:growingGrape ?uri }"
+  },
+  "train_324": {
+    "id": "324",
+    "text": "Was U.S. president Jackson involved in a war?",
+    "extended_amr": "(i / involve-01\n      :ARG1 (p / person\n            :ARG0-of (h / have-org-role-91\n                  :ARG1 (c / country\n                        :name (n / name\n                              :op1 \"United\"\n                              :op2 \"States\"))\n                  :ARG2 (p2 / president))\n            :name (n2 / name\n                  :op1 \"Jackson\"))\n      :ARG2 (w / war-01)\n      :mode interrogative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"u.s. president jackson\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Andrew_Jackson\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"president\"\n\t\t\t\t:id \"h\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/President\")))\n\n",
+    "relations": [
+      "dbo:battle"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Andrew_Jackson dbo:battle ?battle }"
+  },
+  "train_325": {
+    "id": "325",
+    "text": "When was the Titanic completed?",
+    "extended_amr": "(c / complete-01\n      :ARG1 (s / ship\n            :name (n / name\n                  :op1 \"Titanic\"))\n      :time (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"titanic\"\n\t\t\t\t:id \"s\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/RMS_Titanic\")))\n\n",
+    "relations": [
+      "dbo:completionDate"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:RMS_Titanic dbo:completionDate ?date }"
+  },
+  "train_326": {
+    "id": "326",
+    "text": "Did Tesla win a nobel prize in physics?",
+    "extended_amr": "(w / win-01\n      :ARG0 (p / person\n            :name (n / name\n                  :op1 \"Tesla\"))\n      :ARG1 (a / award\n            :name (n2 / name\n                  :op1 \"Nobel\"\n                  :op2 \"Prize\")\n            :topic (p2 / physics))\n      :mode interrogative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"tesla\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Nikola_Tesla\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"nobel\"\n\t\t\t\t:id \"a\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Nobel_Prize\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"physics\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Physics\")))\n\n",
+    "relations": [
+      "dbo:award"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Nikola_Tesla dbo:award res:Nobel_Prize_in_Physics }"
+  },
+  "train_327": {
+    "id": "327",
+    "text": "How many states are in Mexico?",
+    "extended_amr": "(b / be-located-at-91\n      :ARG1 (s / state\n            :location (c / country\n                  :name (n / name\n                        :op1 \"Mexico\")))\n      :ARG2 (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"mexico\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Mexico\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"states\"\n\t\t\t\t:id \"s\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/State\")))\n\n",
+    "relations": [
+      "dbo:type"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT (COUNT(?uri) AS ?count) WHERE { ?uri dbo:type dbr:States_of_Mexico }"
+  },
+  "train_328": {
+    "id": "328",
+    "text": "Which scientist is known for the Manhattan Project and the Nobel Peace Prize?",
+    "extended_amr": "(k / know-02\n      :ARG1 (s / scientist\n            :mod (a / amr-unknown))\n      :ARG3 (a2 / and\n            :op1 (e / event\n                  :name (n / name\n                        :op1 \"Manhattan\"\n                        :op2 \"Project\"))\n            :op2 (a3 / award\n                  :name (n2 / name\n                        :op1 \"Nobel\"\n                        :op2 \"Peace\"\n                        :op3 \"Prize\")))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"manhattan project\"\n\t\t\t\t:id \"e\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Manhattan_Project\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"nobel peace prize\"\n\t\t\t\t:id \"a3\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Nobel_Peace_Prize\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"event\"\n\t\t\t\t:id \"e\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Project\")\n\t\t:entity (all3/ linked_entity\n\t\t\t\t:surface_form \"scientist\"\n\t\t\t\t:id \"s\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Scientist\")))\n\n",
+    "relations": [
+      "dbo:knownFor"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri dbo:knownFor res:Manhattan_Project ; rdf:type dbo:Scientist ; dbo:knownFor res:Nobel_Peace_Prize }"
+  },
+  "train_329": {
+    "id": "329",
+    "text": "How much did the Lego Movie cost?",
+    "extended_amr": "(c / cost-01\n      :ARG1 (w / work-of-art\n            :name (n / name\n                  :op1 \"Lego\"\n                  :op2 \"Movie\"))\n      :ARG2 (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"lego movie\"\n\t\t\t\t:id \"w\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/The_Lego_Movie\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"amr-unknown\"\n\t\t\t\t:id \"a\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Film\")))\n\n",
+    "relations": [
+      "dbo:budget"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?n WHERE { res:The_Lego_Movie dbo:budget ?n }"
+  },
+  "train_330": {
+    "id": "330",
+    "text": "Who composed the music for Harold and Maude?",
+    "extended_amr": "(c / compose-02\n      :ARG0 (a / amr-unknown)\n      :ARG1 (m / music)\n      :ARG2 (w / work-of-art\n            :name (n / name\n                  :op1 \"Harold\"\n                  :op2 \"And\"\n                  :op3 \"Maude\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"harold and maude\"\n\t\t\t\t:id \"w\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Harold_and_Maude\")))\n\n",
+    "relations": [
+      "dbo:musicComposer"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Harold_and_Maude dbo:musicComposer ?uri }"
+  },
+  "train_331": {
+    "id": "331",
+    "text": "List all episodes of the first season of the HBO television series The Sopranos.",
+    "extended_amr": "(l / list-01\n      :ARG0 (y / you)\n      :ARG1 (e / episode\n            :mod (a / all)\n            :part-of (s2 / series\n                  :mod (c / company\n                        :name (n2 / name\n                              :op1 \"HBO\"\n                              :op2 \"Television\"\n                              :op3 \"Series\"\n                              :op4 \"The\"\n                              :op5 \"Sopranos\"))\n                  :name (n / name)\n                  :time (s / season\n                        :ord (o / ordinal-entity\n                              :value 10))))\n      :mode imperative\n      :mode imperative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"first\"\n\t\t\t\t:id \"o\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/The_Sopranos_(season_1)\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"hbo television series the sopranos\"\n\t\t\t\t:id \"s2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/The_Sopranos\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"list\"\n\t\t\t\t:id \"l\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/List\")))\n\n",
+    "relations": [
+      "dbo:seasonNumber",
+      "dbo:series"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:series res:The_Sopranos ; dbo:seasonNumber 1 }"
+  },
+  "train_332": {
+    "id": "332",
+    "text": "Which city has the least inhabitants?",
+    "extended_amr": "(h / have-03\n      :ARG0 (c / city\n            :mod (a / amr-unknown))\n      :ARG1 (p / person\n            :ARG0-of (i / inhabit-01\n                  :ARG1 c)\n            :ARG1-of (h2 / have-degree-91\n                  :ARG3 (l / least)))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"city\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/City\")))\n\n",
+    "relations": [
+      "dbo:populationTotal"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City ; dbo:populationTotal ?pop } ORDER BY ASC(?pop) OFFSET 0 LIMIT 1"
+  },
+  "train_333": {
+    "id": "333",
+    "text": "Where is Syngman Rhee buried?",
+    "extended_amr": "(b / bury-01\n      :ARG1 (p / person\n            :name (n / name\n                  :op1 \"Syngman\"\n                  :op2 \"Rhee\"))\n      :ARG2 (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"syngman rhee\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Syngman_Rhee\")))\n\n",
+    "relations": [
+      "dbo:restingPlace"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Syngman_Rhee dbo:restingPlace ?uri }"
+  },
+  "train_334": {
+    "id": "334",
+    "text": "Does Neymar play for Real Madrid?",
+    "extended_amr": "(p2 / play-01\n      :ARG0 (p / person\n            :name (n / name\n                  :op1 \"Neyimar\"))\n      :beneficiary (t / team\n            :name (n2 / name\n                  :op1 \"Real\"\n                  :op2 \"Madrid\"))\n      :mode interrogative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"neymar\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Neymar\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"real madrid\"\n\t\t\t\t:id \"t\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Real_Madrid_C.F.\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"play\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Play\")))\n\n",
+    "relations": [
+      "dbo:team"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Neymar dbo:team <http://dbpedia.org/resource/Real_Madrid_C.F.> }"
+  },
+  "train_335": {
+    "id": "335",
+    "text": "Who wrote the book The Pillars of the Earth?",
+    "extended_amr": "(w / write-01\n      :ARG0 (a / amr-unknown)\n      :ARG1 (b / book\n            :name (n / name\n                  :op1 \"The\"\n                  :op2 \"pillars\"\n                  :op3 \"of\"\n                  :op4 \"the\"\n                  :op5 \"Earth\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"the pillars of the earth\"\n\t\t\t\t:id \"b\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/The_Pillars_of_the_Earth\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"book\"\n\t\t\t\t:id \"b\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Book\")))\n\n",
+    "relations": [
+      "dbo:author"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Pillars_of_the_Earth dbo:author ?uri }"
+  },
+  "train_336": {
+    "id": "336",
+    "text": "Do Prince Harry and Prince William have the same parents?",
+    "extended_amr": "(h3 / have-03\n      :ARG0 (a / and\n            :op1 (p / person\n                  :ARG0-of (h2 / have-org-role-91\n                        :ARG2 (p6 / prince))\n                  :name (n / name\n                        :op1 \"Harry\"))\n            :op2 (p2 / person\n                  :ARG0-of (h / have-org-role-91\n                        :ARG2 (p5 / prince))\n                  :name (n2 / name\n                        :op1 \"William\")))\n      :ARG1 (p3 / person\n            :ARG0-of (h4 / have-rel-role-91\n                  :ARG1 a\n                  :ARG2 (p4 / parent))\n            :ARG1-of (s / same-01))\n      :mode interrogative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"prince harry\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Prince_Harry\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"prince william\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Prince_William,_Duke_of_Cambridge\")))\n\n",
+    "relations": [
+      "dbo:parent"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { <http://dbpedia.org/resource/Prince_William,_Duke_of_Cambridge> dbo:parent ?x . res:Prince_Harry dbo:parent ?x }"
+  },
+  "train_337": {
+    "id": "337",
+    "text": "Who was the doctoral supervisor of Albert Einstein?",
+    "extended_amr": "(p / person\n      :ARG0-of (s / supervise-01\n            :ARG1 (p2 / person\n                  :name (n / name\n                        :op1 \"Albert\"\n                        :op2 \"Einstein\"))\n            :mod (d / doctor))\n      :domain (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"albert einstein\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Albert_Einstein\")))\n\n",
+    "relations": [
+      "dbo:doctoralAdvisor"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Albert_Einstein dbo:doctoralAdvisor ?uri }"
+  },
+  "train_338": {
+    "id": "338",
+    "text": "Does Breaking Bad have more episodes than Game of Thrones?",
+    "extended_amr": "(h / have-03\n      :ARG0 (s / show\n            :name (n / name\n                  :op1 \"Breaking\"\n                  :op2 \"Bad\"))\n      :ARG1 (e / episode\n            :ARG1-of (h2 / have-degree-91\n                  :ARG3 (m / more)\n                  :ARG4 (e2 / episode)))\n      :mode interrogative\n      :rel (s2 / show\n            :name (n2 / name\n                  :op1 \"Game\"\n                  :op2 \"Of\"\n                  :op3 \"Thrones\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"breaking bad\"\n\t\t\t\t:id \"s\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Breaking_Bad\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"game of thrones\"\n\t\t\t\t:id \"s2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Game_of_Thrones\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"more\"\n\t\t\t\t:id \"m\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Game\")))\n\n",
+    "relations": [
+      "dbo:numberOfEpisodes"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Breaking_Bad dbo:numberOfEpisodes ?x . res:Game_of_Thrones dbo:numberOfEpisodes ?y FILTER ( ?y > ?x ) }"
+  },
+  "train_339": {
+    "id": "339",
+    "text": "Who was Vincent van Gogh inspired by?",
+    "extended_amr": "(i / inspire-01\n      :ARG0 (a / amr-unknown)\n      :ARG1 (p / person\n            :name (n / name\n                  :op1 \"Vincent\"\n                  :op2 \"Van\"\n                  :op3 \"Gogh\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"vincent van gogh\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Vincent_van_Gogh\")))\n\n",
+    "relations": [
+      "dbo:influenced"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:influenced res:Vincent_van_Gogh }"
+  },
+  "train_340": {
+    "id": "340",
+    "text": "Which building after the Burj Khalifa has the most floors?",
+    "extended_amr": "(h / have-03\n      :ARG0 (b / building\n            :mod (a / amr-unknown))\n      :ARG1 (f / floor\n            :ARG1-of (h2 / have-degree-91\n                  :ARG3 (m / most\n                        :mod (a2 / after))\n                  :ARG4 (b2 / building\n                        :name (n / name\n                              :op1 \"Burj\"\n                              :op2 \"Khalifa\"))))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"burj khalifa\"\n\t\t\t\t:id \"b2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Burj_Khalifa\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"building\"\n\t\t\t\t:id \"b\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Building\")))\n\n",
+    "relations": [
+      "dbo:floorCount"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Burj_Khalifa dbo:floorCount ?burj . ?uri rdf:type dbo:Building ; dbo:floorCount ?proj FILTER ( ?proj < ?burj ) } ORDER BY DESC(?proj) LIMIT 1"
+  },
+  "train_341": {
+    "id": "341",
+    "text": "What was the final result of the War of the Roses?",
+    "extended_amr": "(r / result-01\n      :ARG1 (w / war\n            :name (n / name\n                  :op1 \"War\"\n                  :op2 \"Of\"\n                  :op3 \"The\"\n                  :op4 \"Roses\"))\n      :ARG2 (a / amr-unknown)\n      :mod (f / final)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"war of the roses\"\n\t\t\t\t:id \"w\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Wars_of_the_Roses\")))\n\n",
+    "relations": [
+      "dbo:isPartOfMilitaryConflict",
+      "dbo:date",
+      "dbo:result"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?result WHERE { ?uri dbo:isPartOfMilitaryConflict dbr:Wars_of_the_Roses ; dbo:result ?result ; dbo:date ?date } ORDER BY DESC(?date) OFFSET 0 LIMIT 1"
+  },
+  "train_342": {
+    "id": "342",
+    "text": "How much did Pulp Fiction cost?",
+    "extended_amr": "(c / cost-01\n      :ARG1 (w / work-of-art\n            :name (n / name\n                  :op1 \"Pulp\"\n                  :op2 \"Fiction\"))\n      :ARG2 (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"pulp fiction\"\n\t\t\t\t:id \"w\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Pulp_magazine\")))\n\n",
+    "relations": [
+      "dbo:budget"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?n WHERE { res:Pulp_Fiction dbo:budget ?n }"
+  },
+  "train_343": {
+    "id": "343",
+    "text": "Is proinsulin a protein?",
+    "extended_amr": "(p2 / protein\n      :domain (p / proinsulin)\n      :mode interrogative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"proinsulin\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Proinsulin\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"protein\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Protein\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"protein\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Protein\")))\n\n",
+    "relations": [],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ASK WHERE { res:Proinsulin rdf:type dbo:Protein }"
+  },
+  "train_344": {
+    "id": "344",
+    "text": "Do Urdu and Persian have a common root?",
+    "extended_amr": "(h / have-03\n      :ARG0 (a / and\n            :op1 (l / language\n                  :name (n / name\n                        :op1 \"Urdu\"))\n            :op2 (l2 / language\n                  :name (n2 / name\n                        :op1 \"Persian\")))\n      :ARG1 (r / root\n            :mod (c / common))\n      :mode interrogative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"urdu\"\n\t\t\t\t:id \"l\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Urdu\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"persian\"\n\t\t\t\t:id \"l2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Persian_language\")))\n\n",
+    "relations": [
+      "dbo:languageFamily"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> ASK WHERE { dbr:Urdu dbo:languageFamily ?uri . dbr:Persian_language dbo:languageFamily ?uri }"
+  },
+  "train_345": {
+    "id": "345",
+    "text": "Who is starring in Spanish movies produced by Benicio del Toro?",
+    "extended_amr": "(s / star-01\n      :ARG1 (a / amr-unknown)\n      :ARG2 (m / movie\n            :ARG1-of (p / produce-01\n                  :ARG0 (p2 / person\n                        :name (n2 / name\n                              :op1 \"Benicio\"\n                              :op2 \"Del\"\n                              :op3 \"Toro\")))\n            :mod (c / country\n                  :name (n / name\n                        :op1 \"Spain\")))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"spanish\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Spain\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"benicio del toro\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Benicio_del_Toro\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"movies\"\n\t\t\t\t:id \"m\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Film\")))\n\n",
+    "relations": [
+      "dbo:country",
+      "dbo:starring",
+      "dbo:producer"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?film rdf:type dbo:Film ; dbo:country res:Spain ; dbo:producer res:Benicio_del_Toro ; dbo:starring ?uri . ?uri rdf:type dbo:Person }"
+  },
+  "train_346": {
+    "id": "346",
+    "text": "Is Lake Baikal bigger than the Great Bear Lake?",
+    "extended_amr": "(h / have-degree-91\n      :ARG1 (l / lake\n            :name (n / name\n                  :op1 \"Lake\"\n                  :op2 \"Baikal\"))\n      :ARG2 (b / big)\n      :ARG3 (m / more)\n      :ARG4 (l3 / lake\n            :name (n2 / name\n                  :op1 \"Great\"\n                  :op2 \"Bear\"\n                  :op3 \"Lake\"))\n      :ARG5 (l2 / lake)\n      :mode interrogative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"lake baikal\"\n\t\t\t\t:id \"l\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Lake_Baikal\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"great bear lake\"\n\t\t\t\t:id \"l3\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Great_Bear_Lake\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"lake\"\n\t\t\t\t:id \"l\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Lake\")))\n\n",
+    "relations": [
+      "dbo:areaTotal"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Lake_Baikal dbo:areaTotal ?a1 . res:Great_Bear_Lake dbo:areaTotal ?a2 FILTER ( ?a1 > ?a2 ) }"
+  },
+  "train_347": {
+    "id": "347",
+    "text": "Show me all books in Asimov's Foundation series.",
+    "extended_amr": "(s / show-01\n      :ARG0 (y / you)\n      :ARG1 (b / book\n            :mod (a / all)\n            :part-of (s2 / series\n                  :name (n / name\n                        :op1 \"Asimov's\"\n                        :op2 \"Foundation\")))\n      :ARG2 (i / i)\n      :mode imperative\n      :mode imperative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"asimov's foundation series\"\n\t\t\t\t:id \"s2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Foundation_series\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"books\"\n\t\t\t\t:id \"b\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Book\")))\n\n",
+    "relations": [
+      "dbo:series"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:series res:Foundation_series }"
+  },
+  "train_348": {
+    "id": "348",
+    "text": "Where was Bach born?",
+    "extended_amr": "(b / bear-02\n      :ARG1 (p / person\n            :name (n / name\n                  :op1 \"Bach\"))\n      :location (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"bach\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Johann_Sebastian_Bach\")))\n\n",
+    "relations": [
+      "dbo:birthPlace"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Johann_Sebastian_Bach dbo:birthPlace ?uri }"
+  },
+  "train_349": {
+    "id": "349",
+    "text": "Which city has the oldest running metro?",
+    "extended_amr": "(h / have-03\n      :ARG0 (c / city\n            :mod (a / amr-unknown))\n      :ARG1 (m / metro\n            :ARG1-of (r / run-01)\n            :ARG1-of (h2 / have-degree-91\n                  :ARG2 (o / old)\n                  :ARG3 (m2 / most)))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"metro\"\n\t\t\t\t:id \"m\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/S\u00c3\u00a3o_Paulo_Metro\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"city\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/City\")))\n\n",
+    "relations": [
+      "dbo:type",
+      "dbo:openingYear",
+      "dbo:location"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?loc WHERE { ?uri dbo:type dbr:Rapid_transit ; dbo:openingYear ?date ; dbo:location ?loc . ?loc rdf:type dbo:City } ORDER BY ASC(?date) LIMIT 1"
+  },
+  "train_350": {
+    "id": "350",
+    "text": "Who designed the Brooklyn Bridge?",
+    "extended_amr": "(d / design-01\n      :ARG0 (a / amr-unknown)\n      :ARG1 (b / bridge\n            :name (n / name\n                  :op1 \"Brooklyn\"\n                  :op2 \"Bridge\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"brooklyn bridge\"\n\t\t\t\t:id \"b\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Brooklyn_Bridge\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"bridge\"\n\t\t\t\t:id \"b\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Bridge\")))\n\n",
+    "relations": [
+      "dbo:architect"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Brooklyn_Bridge dbo:architect ?uri }"
+  },
+  "train_351": {
+    "id": "351",
+    "text": "How many people live in Eurasia?",
+    "extended_amr": "(l / live-01\n      :ARG0 (p / person\n            :quant (a / amr-unknown))\n      :location (c / continent\n            :name (n / name\n                  :op1 \"Eurasia\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"eurasia\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Eurasia\")))\n\n",
+    "relations": [
+      "dbo:populationTotal"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?population WHERE { res:Eurasia dbo:populationTotal ?population }"
+  },
+  "train_352": {
+    "id": "352",
+    "text": "Who is the host of the BBC Wildlife Specials?",
+    "extended_amr": "(p / person\n      :ARG0-of (h / host-01\n            :ARG1 (s / show\n                  :mod (c / company\n                        :name (n / name\n                              :op1 \"British\"\n                              :op2 \"Broadcasting\"\n                              :op3 \"Corporation\"))\n                  :name (n2 / name\n                        :op1 \"Wildlife\"\n                        :op2 \"Specials\")))\n      :domain (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"bbc wildlife specials\"\n\t\t\t\t:id \"s\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/BBC_Wildlife_Specials\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"host\"\n\t\t\t\t:id \"h\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Host\")))\n\n",
+    "relations": [
+      "dbo:presenter"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:BBC_Wildlife_Specials dbo:presenter ?uri }"
+  },
+  "train_353": {
+    "id": "353",
+    "text": "What is the total population of Melbourne, Florida?",
+    "extended_amr": "(h / have-quant-91\n      :ARG1 (p / population\n            :mod (t / total)\n            :mod (c / city\n                  :location (s / state\n                        :name (n2 / name\n                              :op1 \"Florida\"))\n                  :name (n / name\n                        :op1 \"Melbourne\")))\n      :ARG2 (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"melbourne, florida\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Melbourne,_Florida\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"population\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Population\")))\n\n",
+    "relations": [
+      "dbo:populationTotal"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> SELECT ?uri WHERE { <http://dbpedia.org/resource/Melbourne,_Florida> dbo:populationTotal ?uri }"
+  },
+  "train_354": {
+    "id": "354",
+    "text": "What country is Mount Everest in?",
+    "extended_amr": "(b / be-located-at-91\n      :ARG1 (m / mountain\n            :name (n / name\n                  :op1 \"Mount\"\n                  :op2 \"Everest\"))\n      :ARG2 (c / country\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"mount everest\"\n\t\t\t\t:id \"m\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Mount_Everest\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"country\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Country\")))\n\n",
+    "relations": [
+      "dbo:locatedInArea"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Mount_Everest dbo:locatedInArea ?uri . ?uri rdf:type dbo:Country }"
+  },
+  "train_355": {
+    "id": "355",
+    "text": "To which artistic movement did the painter of The Three Dancers belong?",
+    "extended_amr": "(b / belong-01\n      :ARG0 (p / person\n            :ARG0-of (p3 / paint-02\n                  :ARG1 (p2 / picture\n                        :name (n / name\n                              :op1 \"The\"\n                              :op2 \"Three\"\n                              :op3 \"Dancers\"))))\n      :ARG1 (m / movement-07\n            :ARG1 (a2 / art)\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"the three dancers\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/The_Three_Dancers\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"painter\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Painter\")))\n\n",
+    "relations": [
+      "dbo:author",
+      "dbo:movement"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Three_Dancers dbo:author ?person . ?person dbo:movement ?uri }"
+  },
+  "train_356": {
+    "id": "356",
+    "text": "When did Operation Overlord commence?",
+    "extended_amr": "(c / commence-01\n      :ARG1 (n / natural-disaster\n            :name (n2 / name\n                  :op1 \"Operation\"\n                  :op2 \"Overlord\"))\n      :time (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"operation overlord\"\n\t\t\t\t:id \"n\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Operation_Overlord\")))\n\n",
+    "relations": [
+      "dbo:date"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?d WHERE { res:Operation_Overlord dbo:date ?d }"
+  },
+  "train_357": {
+    "id": "357",
+    "text": "What is the bridge with the longest span?",
+    "extended_amr": "(b / bridge\n      :ARG0-of (h / have-03\n            :ARG1 (s / span-01\n                  :ARG1-of (h2 / have-degree-91\n                        :ARG2 (l / long-03)\n                        :ARG3 (m / most))))\n      :domain (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"bridge\"\n\t\t\t\t:id \"b\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Bridge\")))\n\n",
+    "relations": [
+      "dbo:mainspan"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Bridge ; dbo:mainspan ?s } ORDER BY DESC(?s) OFFSET 0 LIMIT 1"
+  },
+  "train_358": {
+    "id": "358",
+    "text": "Is there a video game called Battle Chess?",
+    "extended_amr": "(c / call-01\n      :ARG1 (g / game\n            :mod (v / video))\n      :ARG2 (p / product\n            :name (n / name\n                  :op1 \"Battle\"\n                  :op2 \"Chess\"))\n      :mode interrogative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"battle chess\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Battle_Chess\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"video game\"\n\t\t\t\t:id \"g\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/VideoGame\")))\n\n",
+    "relations": [],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ASK WHERE { ?uri rdf:type dbo:VideoGame ; rdfs:label \"Battle Chess\"@en }"
+  },
+  "train_359": {
+    "id": "359",
+    "text": "Who was buried in the Great Pyramid of Giza?",
+    "extended_amr": "(b / bury-01\n      :ARG1 (a / amr-unknown)\n      :ARG2 (l / library\n            :name (n / name\n                  :op1 \"Great\"\n                  :op2 \"Pyramid\"\n                  :op3 \"Of\"\n                  :op4 \"Giza\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"great pyramid of giza\"\n\t\t\t\t:id \"l\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Great_Pyramid_of_Giza\")))\n\n",
+    "relations": [
+      "dbo:restingPlace"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?uri WHERE { ?uri dbo:restingPlace dbr:Great_Pyramid_of_Giza }"
+  },
+  "train_360": {
+    "id": "360",
+    "text": "Does the Ford Motor Company have a manufacturing plant in Malaysia?",
+    "extended_amr": "(h / have-03\n      :ARG0 (c / company\n            :name (n / name\n                  :op1 \"Ford\"\n                  :op2 \"Motor\"\n                  :op3 \"Company\"))\n      :ARG1 (p / plant\n            :location (c2 / country\n                  :name (n2 / name\n                        :op1 \"Malasya\"))\n            :mod (m / manufacturing-01))\n      :mode interrogative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"ford motor company\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Ford_Motor_Company\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"malaysia\"\n\t\t\t\t:id \"c2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Malaysia\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"company\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Company\")\n\t\t:entity (all3/ linked_entity\n\t\t\t\t:surface_form \"plant\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Plant\")))\n\n",
+    "relations": [
+      "dbo:assembly",
+      "dbo:manufacturer"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> ASK WHERE { ?uri dbo:assembly dbr:Malaysia ; dbo:manufacturer dbr:Ford_Motor_Company }"
+  },
+  "train_361": {
+    "id": "361",
+    "text": "Did Socrates influence Aristotle?",
+    "extended_amr": "(i2 / influence-01\n      :ARG0 (p / person\n            :name (n / name\n                  :op1 \"Socrates\"))\n      :ARG1 (p2 / person\n            :name (n2 / name\n                  :op1 \"Aristotle\"))\n      :mode interrogative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"socrates\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Socrates\")))\n\n",
+    "relations": [
+      "dbo:influencedBy"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Aristotle dbo:influencedBy res:Socrates }"
+  },
+  "train_362": {
+    "id": "362",
+    "text": "How many children did Benjamin Franklin have?",
+    "extended_amr": "(h2 / have-03\n      :ARG0 (p2 / person\n            :name (n / name\n                  :op1 \"Benjamin\"\n                  :op2 \"Franklin\"))\n      :ARG1 (p / person\n            :ARG0-of (h / have-rel-role-91\n                  :ARG1 p2\n                  :ARG2 (c / child))\n            :quant (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"benjamin franklin\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Benjamin_Franklin\")))\n\n",
+    "relations": [
+      "dbo:child"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { res:Benjamin_Franklin dbo:child ?uri }"
+  },
+  "train_363": {
+    "id": "363",
+    "text": "How tall is Michael Jordan?",
+    "extended_amr": "(h / have-quant-91\n      :ARG1 (p / person\n            :name (n / name\n                  :op1 \"Michael\"\n                  :op2 \"Jordan\"))\n      :ARG2 (d / distance-quantity\n            :quant (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"michael jordan\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Michael_Jordan\")))\n\n",
+    "relations": [
+      "dbo:height"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Michael_Jordan dbo:height ?num }"
+  },
+  "train_364": {
+    "id": "364",
+    "text": "In which UK city are the headquarters of the MI6?",
+    "extended_amr": "(b / be-located-at-91\n      :ARG1 (h / headquarters-yy\n            :poss (g / government-organization\n                  :name (n2 / name\n                        :op1 \"MI6\")))\n      :ARG2 (c2 / city\n            :mod (c / country\n                  :name (n / name\n                        :op1 \"United\"\n                        :op2 \"Kingdom\"))\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"mi6\"\n\t\t\t\t:id \"g\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Secret_Intelligence_Service\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"city\"\n\t\t\t\t:id \"c2\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/City\")))\n\n",
+    "relations": [
+      "dbo:country",
+      "dbo:headquarter"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Secret_Intelligence_Service dbo:headquarter ?uri . ?uri dbo:country res:United_Kingdom }"
+  },
+  "train_365": {
+    "id": "365",
+    "text": "Who created Family Guy?",
+    "extended_amr": "(c / create-01\n      :ARG0 (a / amr-unknown)\n      :ARG1 (b / broadcast-program\n            :name (n / name\n                  :op1 \"Family\"\n                  :op2 \"Guy\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"family guy\"\n\t\t\t\t:id \"b\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Family_Guy\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"broadcast-program\"\n\t\t\t\t:id \"b\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Family\")))\n\n",
+    "relations": [
+      "dbo:creator"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Family_Guy dbo:creator ?uri }"
+  },
+  "train_366": {
+    "id": "366",
+    "text": "In which city does the Chile Route 68 end?",
+    "extended_amr": "(e / end-01\n      :ARG1 (r / road\n            :mod (c2 / country\n                  :name (n / name\n                        :op1 \"Chile\"))\n            :name (n2 / name\n                  :op1 \"Route\"\n                  :op2 \"68\"))\n      :location (c / city\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"chile route 68\"\n\t\t\t\t:id \"r\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Chile_Route_68\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"city\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/City\")))\n\n",
+    "relations": [
+      "dbo:routeEnd"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Chile_Route_68 dbo:routeEnd ?uri }"
+  },
+  "train_367": {
+    "id": "367",
+    "text": "Give me the grandchildren of Elvis Presley.",
+    "extended_amr": "(g / give-01\n      :ARG0 (y / you)\n      :ARG1 (p / person\n            :ARG0-of (h / have-rel-role-91\n                  :ARG1 (p2 / person\n                        :name (n / name\n                              :op1 \"Elvis\"\n                              :op2 \"Presley\"))\n                  :ARG2 (g2 / grandchild)))\n      :ARG2 (i / i)\n      :mode imperative\n      :mode imperative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"elvis presley\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Elvis_Presley\")))\n\n",
+    "relations": [
+      "dbo:child"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Elvis_Presley dbo:child ?child . ?child dbo:child ?uri }"
+  },
+  "train_368": {
+    "id": "368",
+    "text": "When did the Ming dynasty dissolve?",
+    "extended_amr": "(d2 / dissolve-01\n      :ARG1 (d / dynasty\n            :name (n / name\n                  :op1 \"Ming\"))\n      :time (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"ming dynasty\"\n\t\t\t\t:id \"d\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Ming_dynasty\")))\n\n",
+    "relations": [
+      "dbo:dissolutionDate"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Ming_dynasty dbo:dissolutionDate ?date }"
+  },
+  "train_369": {
+    "id": "369",
+    "text": "In which military conflicts did Lawrence of Arabia participate?",
+    "extended_amr": "(p2 / participate-01\n      :ARG0 (p / person\n            :name (n / name\n                  :op1 \"Lawrence\"\n                  :op2 \"Of\"\n                  :op3 \"Arabia\"))\n      :ARG1 (c / conflict-01\n            :mod (m / military)\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"lawrence of arabia\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Lawrence_of_Arabia_(film)\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"military conflicts\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/MilitaryConflict\")))\n\n",
+    "relations": [
+      "dbo:battle"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:T._E._Lawrence dbo:battle ?uri }"
+  },
+  "train_370": {
+    "id": "370",
+    "text": "What is the timezone in San Pedro de Atacama?",
+    "extended_amr": "(t / timezone\n      :domain (a / amr-unknown)\n      :location (c / city\n            :name (n / name\n                  :op1 \"San\"\n                  :op2 \"Pedro\"\n                  :op3 \"De\"\n                  :op4 \"Atacama\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"san pedro de atacama\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/San_Pedro_de_Atacama\")))\n\n",
+    "relations": [
+      "dbo:timeZone"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:San_Pedro_de_Atacama dbo:timeZone ?uri }"
+  },
+  "train_371": {
+    "id": "371",
+    "text": "Give me all books by William Goldman with more than 300 pages.",
+    "extended_amr": "(g / give-01\n      :ARG0 (y / you)\n      :ARG1 (b / book\n            :ARG0-of (h / have-03\n                  :ARG1 (p2 / page\n                        :quant (m / more-than\n                              :op1 300)))\n            :mod (a / all)\n            :prep-by (p / person\n                  :name (n / name\n                        :op1 \"William\"\n                        :op2 \"Goldman\")))\n      :ARG2 (i / i)\n      :mode imperative\n      :mode imperative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"william goldman\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/William_Goldman\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"books\"\n\t\t\t\t:id \"b\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Book\")))\n\n",
+    "relations": [
+      "dbo:numberOfPages",
+      "dbo:author"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book ; dbo:author res:William_Goldman ; dbo:numberOfPages ?x FILTER ( ?x > 300 ) }"
+  },
+  "train_372": {
+    "id": "372",
+    "text": "What did Bruce Carver die from?",
+    "extended_amr": "(d / die-01\n      :ARG1 (p / person\n            :name (n / name\n                  :op1 \"Bruce\"\n                  :op2 \"Carver\"))\n      :ARG1-of (c / cause-01\n            :ARG0 (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"bruce carver\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Bruce_Carver\")))\n\n",
+    "relations": [
+      "dbo:deathCause"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Bruce_Carver dbo:deathCause ?uri }"
+  },
+  "train_373": {
+    "id": "373",
+    "text": "Which subsidiary of Lufthansa serves both Dortmund and Berlin Tegel?",
+    "extended_amr": "(s2 / serve-01\n      :ARG0 (s / subsidiary\n            :mod (a / amr-unknown)\n            :part-of (c / company\n                  :name (n / name\n                        :op1 \"Lufthansa\")))\n      :ARG2 (a2 / and\n            :mod (c4 / city\n                  :name (n4 / name\n                        :op1 \"Tegel\"))\n            :op1 (c2 / city\n                  :name (n2 / name\n                        :op1 \"Dortmund\"))\n            :op2 (c3 / city\n                  :name (n3 / name\n                        :op1 \"Berlin\")))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"lufthansa\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Lufthansa\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"dortmund\"\n\t\t\t\t:id \"c2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Dortmund\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"berlin tegel\"\n\t\t\t\t:id \"c4\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Berlin_Tegel_Airport\")))\n\n",
+    "relations": [
+      "dbo:subsidiary",
+      "dbo:targetAirport"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Lufthansa dbo:subsidiary ?uri . ?uri dbo:targetAirport res:Dortmund_Airport ; dbo:targetAirport res:Berlin_Tegel_Airport }"
+  },
+  "train_374": {
+    "id": "374",
+    "text": "Does Abraham Lincoln's death place have a website?",
+    "extended_amr": "(h / have-03\n      :ARG0 (p2 / place\n            :location-of (d / die-01\n                  :ARG1 (p / person\n                        :name (n / name\n                              :op1 \"Abraham\"\n                              :op2 \"Lincoln\"))))\n      :ARG1 (w / website)\n      :mode interrogative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"abraham lincoln's\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Abraham_Lincoln\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"death\"\n\t\t\t\t:id \"d\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Death\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"website\"\n\t\t\t\t:id \"w\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Website\")\n\t\t:entity (all3/ linked_entity\n\t\t\t\t:surface_form \"place\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Place\")))\n\n",
+    "relations": [
+      "dbo:website",
+      "dbo:deathPlace"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Abraham_Lincoln dbo:deathPlace ?p . ?p dbo:website ?w }"
+  },
+  "train_375": {
+    "id": "375",
+    "text": "Did Elvis Presley have children?",
+    "extended_amr": "(h / have-03\n      :ARG0 (p / person\n            :name (n / name\n                  :op1 \"Elvis\"\n                  :op2 \"Presley\"))\n      :ARG1 (c / child)\n      :mode interrogative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"elvis presley\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Elvis_Presley\")))\n\n",
+    "relations": [
+      "dbo:child"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Elvis_Presley dbo:child ?uri }"
+  },
+  "train_376": {
+    "id": "376",
+    "text": "Is Michelle Obama the wife of Barack Obama?",
+    "extended_amr": "(p / person\n      :ARG0-of (h / have-rel-role-91\n            :ARG1 (p2 / person\n                  :name (n2 / name\n                        :op1 \"Barack\"\n                        :op2 \"Obama\"))\n            :ARG2 (w / wife))\n      :mode interrogative\n      :name (n / name\n            :op1 \"Michelle\"\n            :op2 \"Obama\")\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"michelle obama\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Michelle_Obama\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"barack obama\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Barack_Obama\")))\n\n",
+    "relations": [
+      "dbo:spouse"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Barack_Obama dbo:spouse res:Michelle_Obama }"
+  },
+  "train_377": {
+    "id": "377",
+    "text": "In which city does Sylvester Stallone live?",
+    "extended_amr": "(l / live-01\n      :ARG0 (p / person\n            :name (n / name\n                  :op1 \"Sylvester\"\n                  :op2 \"Stallone\"))\n      :location (c / city\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"sylvester stallone\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Sylvester_Stallone\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"city\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/City\")))\n\n",
+    "relations": [
+      "dbo:residence"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City . res:Sylvester_Stallone dbo:residence ?uri }"
+  },
+  "train_378": {
+    "id": "378",
+    "text": "Which books by Kerouac were published by Viking Press?",
+    "extended_amr": "(p2 / publish-01\n      :ARG0 (c / company\n            :name (n2 / name\n                  :op1 \"Viking\"\n                  :op2 \"Press\"))\n      :ARG1 (b / book\n            :mod (a / amr-unknown)\n            :poss (p / person\n                  :name (n / name\n                        :op1 \"Kerouac\")))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"kerouac\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Jack_Kerouac\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"viking press\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Viking_Press\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"books\"\n\t\t\t\t:id \"b\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Book\")))\n\n",
+    "relations": [
+      "dbo:author",
+      "dbo:publisher"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book ; dbo:publisher res:Viking_Press ; dbo:author res:Jack_Kerouac }"
+  },
+  "train_379": {
+    "id": "379",
+    "text": "Who wrote the song Hotel California?",
+    "extended_amr": "(w / write-01\n      :ARG0 (a / amr-unknown)\n      :ARG1 (s / song\n            :name (n / name\n                  :op1 \"Hotel\"\n                  :op2 \"California\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"hotel california\"\n\t\t\t\t:id \"s\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Hotel_California\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"song\"\n\t\t\t\t:id \"s\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Hotel\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"song\"\n\t\t\t\t:id \"s\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Song\")))\n\n",
+    "relations": [
+      "dbo:writer"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Hotel_California dbo:writer ?uri }"
+  },
+  "train_380": {
+    "id": "380",
+    "text": "What is the capital of Canada?",
+    "extended_amr": "(c / city\n      :ARG0-of (h / have-org-role-91\n            :ARG1 (c2 / country\n                  :name (n / name\n                        :op1 \"canada\"))\n            :ARG2 (c3 / capital))\n      :domain (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"canada\"\n\t\t\t\t:id \"c2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Canada\")))\n\n",
+    "relations": [
+      "dbo:capital"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Canada dbo:capital ?uri }"
+  },
+  "train_381": {
+    "id": "381",
+    "text": "Who is the mayor of Tel Aviv?",
+    "extended_amr": "(p / person\n      :ARG0-of (h / have-org-role-91\n            :ARG1 (c / city\n                  :name (n / name\n                        :op1 \"Tel\"\n                        :op2 \"Aviv\"))\n            :ARG2 (m / mayor))\n      :domain (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"tel aviv\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Tel_Aviv\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"mayor\"\n\t\t\t\t:id \"h\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Mayor\")))\n\n",
+    "relations": [
+      "dbo:leaderName"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Tel_Aviv dbo:leaderName ?uri }"
+  },
+  "train_382": {
+    "id": "382",
+    "text": "What form of government does Russia have?",
+    "extended_amr": "(h / have-03\n      :ARG0 (c / country\n            :name (n / name\n                  :op1 \"Russia\"))\n      :ARG1 (g / government-organization\n            :ARG0-of (g2 / govern-01)\n            :mod (f / form\n                  :mod (a / amr-unknown)))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"russia\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Russia\")))\n\n",
+    "relations": [
+      "dbo:governmentType"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Russia dbo:governmentType ?uri }"
+  },
+  "train_383": {
+    "id": "383",
+    "text": "Show me the book that Muhammad Ali wrote.",
+    "extended_amr": "(s / show-01\n      :ARG1 (b / book\n            :ARG1-of (w / write-01\n                  :ARG0 (p / person\n                        :name (n / name\n                              :op1 \"Muhammad\"\n                              :op2 \"Ali\"))))\n      :mode (m / me)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"muhammad ali\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Muhammad_Ali\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"book\"\n\t\t\t\t:id \"b\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Book\")))\n\n",
+    "relations": [
+      "dbo:author"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book ; dbo:author res:Muhammad_Ali }"
+  },
+  "train_384": {
+    "id": "384",
+    "text": "Who was the first to climb Mount Everest?",
+    "extended_amr": "(c / climb-01\n      :ARG0 (a / amr-unknown)\n      :ARG1 (m / mountain\n            :name (n / name\n                  :op1 \"Mount\"\n                  :op2 \"Everest\"))\n      :ord (o / ordinal-entity\n            :value 10)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"mount everest\"\n\t\t\t\t:id \"m\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Mount_Everest\")))\n\n",
+    "relations": [
+      "dbo:firstAscentPerson"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Mount_Everest dbo:firstAscentPerson ?uri }"
+  },
+  "train_385": {
+    "id": "385",
+    "text": "How many languages are spoken in Colombia?",
+    "extended_amr": "(s / speak-01\n      :ARG3 (l / language\n            :quant (a / amr-unknown))\n      :location (c / country\n            :name (n / name\n                  :op1 \"Colombia\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"colombia\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Colombia\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"languages\"\n\t\t\t\t:id \"l\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Language\")))\n\n",
+    "relations": [
+      "dbo:language"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri rdf:type dbo:Language . res:Colombia dbo:language ?uri }"
+  },
+  "train_386": {
+    "id": "386",
+    "text": "What is the currency of the Czech Republic?",
+    "extended_amr": "(c / currency\n      :domain (a / amr-unknown)\n      :poss (c2 / country\n            :name (n / name\n                  :op1 \"Czech\"\n                  :op2 \"Republic\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"czech republic\"\n\t\t\t\t:id \"c2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Czech_Republic\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"currency\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Currency\")))\n\n",
+    "relations": [
+      "dbo:currency"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Czech_Republic dbo:currency ?uri }"
+  },
+  "train_387": {
+    "id": "387",
+    "text": "Where in France is sparkling wine produced?",
+    "extended_amr": "(p / produce-01\n      :ARG1 (w / wine\n            :mod (s / sparkle-01))\n      :location (a / amr-unknown\n            :location (c / country\n                  :name (n / name\n                        :op1 \"France\")))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"france\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/France\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"wine\"\n\t\t\t\t:id \"w\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Wine\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"wine\"\n\t\t\t\t:id \"w\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Wine\")))\n\n",
+    "relations": [
+      "dbo:wineProduced",
+      "dbo:location"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:wineProduced res:Sparkling_wine ; dbo:location res:France }"
+  },
+  "train_388": {
+    "id": "388",
+    "text": "When did Boris Becker end his active career?",
+    "extended_amr": "(e / end-01\n      :ARG0 (p / person\n            :name (n / name\n                  :op1 \"Boris\"\n                  :op2 \"Becker\"))\n      :ARG1 (c / career\n            :ARG1-of (a2 / activity-06\n                  :ARG0 p))\n      :time (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"boris becker\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Boris_Becker\")))\n\n",
+    "relations": [
+      "dbo:activeYearsEndDate"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?d WHERE { res:Boris_Becker dbo:activeYearsEndDate ?d }"
+  },
+  "train_389": {
+    "id": "389",
+    "text": "Which movies starring Mickey Rourke were directed by Guy Ritchie?",
+    "extended_amr": "(d / direct-01\n      :ARG0 (p2 / person\n            :name (n2 / name\n                  :op1 \"Guy\"\n                  :op2 \"Ritchie\"))\n      :ARG1 (m / movie\n            :ARG2-of (s / star-01\n                  :ARG1 (p / person\n                        :name (n / name\n                              :op1 \"Mickey\"\n                              :op2 \"Rourke\")))\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"guy ritchie\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Guy_Ritchie\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"movies\"\n\t\t\t\t:id \"m\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Film\")))\n\n",
+    "relations": [
+      "dbo:director",
+      "dbo:starring"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Mickey_Rourke ; dbo:director res:Guy_Ritchie }"
+  },
+  "train_390": {
+    "id": "390",
+    "text": "In which films did Julia Roberts as well as Richard Gere play?",
+    "extended_amr": "(p3 / play-01\n      :ARG0 (f / film\n            :mod (a / amr-unknown))\n      :ARG1-of (a2 / and\n            :op1 (p / person\n                  :name (n / name\n                        :op1 \"Julia\"\n                        :op2 \"Roberts\"))\n            :op2 (p2 / person\n                  :name (n2 / name\n                        :op1 \"Richard\"\n                        :op2 \"Gere\")))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"julia roberts\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Julia_Roberts\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"richard gere\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Richard_Gere\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"play\"\n\t\t\t\t:id \"p3\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Play\")))\n\n",
+    "relations": [
+      "dbo:starring"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Julia_Roberts ; dbo:starring res:Richard_Gere }"
+  },
+  "train_391": {
+    "id": "391",
+    "text": "Show me Hemingway's autobiography.",
+    "extended_amr": "(s / show-01\n      :ARG0 (y / you)\n      :ARG1 (a / autobiography\n            :poss (p / person\n                  :name (n / name\n                        :op1 \"Hemingway\")))\n      :ARG2 (i / i)\n      :mode imperative\n      :mode imperative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"show me hemingway's\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/John_Hemingway\")))\n\n",
+    "relations": [
+      "dbo:author",
+      "dbo:literaryGenre"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:author res:Ernest_Hemingway ; dbo:literaryGenre res:Autobiography }"
+  },
+  "train_392": {
+    "id": "392",
+    "text": "How tall is Amazon Eve?",
+    "extended_amr": "(t / tall\n      :domain (p / person\n            :name (n / name\n                  :op1 \"Amazon\"\n                  :op2 \"Eve\"))\n      :quant (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"amazon eve\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Amazon_Eve\")))\n\n",
+    "relations": [
+      "dbo:height"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?height WHERE { res:Amazon_Eve dbo:height ?height }"
+  },
+  "train_393": {
+    "id": "393",
+    "text": "What are the five boroughs of New York?",
+    "extended_amr": "(b / borough\n      :domain (a / amr-unknown)\n      :part-of (c / city\n            :name (n / name\n                  :op1 \"New\"\n                  :op2 \"York\"))\n      :quant 5\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"five\"\n\t\t\t\t:id \"x0\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Borough_(New_York_City)\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"new york\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/New_York\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"boroughs\"\n\t\t\t\t:id \"b\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/SubMunicipality\")))\n\n",
+    "relations": [
+      "dbo:governmentType"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { ?uri dbo:governmentType <http://dbpedia.org/resource/Borough_(New_York_City)> }"
+  },
+  "train_394": {
+    "id": "394",
+    "text": "Give me all Canadian Grunge record labels.",
+    "extended_amr": "(g / give-01\n      :ARG0 (y / you)\n      :ARG1 (l / label\n            :mod (r / record)\n            :mod (a / all)\n            :poss (s / show\n                  :name (n / name\n                        :op1 \"Canadian\"\n                        :op2 \"Grunge\")))\n      :ARG2 (i / i)\n      :mode imperative\n      :mode imperative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"canadian grunge\"\n\t\t\t\t:id \"s\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Grunge\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"labels\"\n\t\t\t\t:id \"l\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Record_label\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"record labels\"\n\t\t\t\t:id \"l\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/RecordLabel\")))\n\n",
+    "relations": [
+      "dbo:genre",
+      "dbo:country"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:RecordLabel ; dbo:genre res:Grunge ; dbo:country res:Canada }"
+  },
+  "train_395": {
+    "id": "395",
+    "text": "In which country does the Ganges start?",
+    "extended_amr": "(s / start-06\n      :ARG0 (r / river\n            :name (n / name\n                  :op1 \"Ganges\"))\n      :location (c / country\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"ganges\"\n\t\t\t\t:id \"r\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Ganges\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"country\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Country\")))\n\n",
+    "relations": [
+      "dbo:sourceCountry"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Ganges dbo:sourceCountry ?uri }"
+  },
+  "train_396": {
+    "id": "396",
+    "text": "Who is the founder of Penguin Books?",
+    "extended_amr": "(p / person\n      :ARG0-of (f / found-01\n            :ARG1 (c / company\n                  :name (n / name\n                        :op1 \"Penguin\"\n                        :op2 \"Books\")))\n      :domain (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"penguin books\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Penguin_Books\")))\n\n",
+    "relations": [
+      "dbo:founder"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Penguin_Books dbo:founder ?uri }"
+  },
+  "train_397": {
+    "id": "397",
+    "text": "Who wrote the Game of Thrones theme?",
+    "extended_amr": "(w / write-01\n      :ARG0 (a / amr-unknown)\n      :ARG1 (t / theme\n            :mod (b / broadcast-program\n                  :name (n / name\n                        :op1 \"Game\"\n                        :op2 \"Of\"\n                        :op3 \"Thrones\")))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"game of thrones theme\"\n\t\t\t\t:id \"t\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Game_of_Thrones_Theme\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"broadcast-program\"\n\t\t\t\t:id \"b\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Game\")))\n\n",
+    "relations": [
+      "dbo:composer"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Game_of_Thrones dbo:composer ?uri }"
+  },
+  "train_398": {
+    "id": "398",
+    "text": "Who is the president of Eritrea?",
+    "extended_amr": "(p2 / person\n      :ARG0-of (h / have-org-role-91\n            :ARG1 (c / country\n                  :name (n / name\n                        :op1 \"Eritrea\"))\n            :ARG2 (p / president))\n      :domain (a / amr-unknown)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"eritrea\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Eritrea\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"president\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/President\")))\n\n",
+    "relations": [
+      "dbo:leaderTitle",
+      "dbo:leader"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Eritrea dbo:leader ?uri ; dbo:leaderTitle \"President\"@en }"
+  },
+  "train_399": {
+    "id": "399",
+    "text": "In which city did John F. Kennedy die?",
+    "extended_amr": "(d / die-01\n      :ARG1 (p / person\n            :name (n / name\n                  :op1 \"John\"\n                  :op2 \"F.Kennedy\"))\n      :location (c / city\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"john f. kennedy\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/John_F._Kennedy\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"city\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/City\")))\n\n",
+    "relations": [
+      "dbo:deathPlace"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:John_F._Kennedy dbo:deathPlace ?uri . ?uri rdf:type dbo:City }"
+  },
+  "train_400": {
+    "id": "400",
+    "text": "What is the highest mountain in Australia?",
+    "extended_amr": "(m3 / mountain\n      :ARG1-of (h / have-degree-91\n            :ARG3 (m2 / most)\n            :ARG5 (m / mountain))\n      :location (c / country\n            :name (n / name\n                  :op1 \"Australia\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"australia\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Australia\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"mountain\"\n\t\t\t\t:id \"m3\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Mountain\")))\n\n",
+    "relations": [
+      "dbo:elevation",
+      "dbo:locatedInArea"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Mountain ; dbo:locatedInArea res:Australia ; dbo:elevation ?elevation } ORDER BY DESC(?elevation) LIMIT 1"
+  },
+  "train_401": {
+    "id": "401",
+    "text": "Who writes the Farmers' Almanac?",
+    "extended_amr": "(w / write-01\n      :ARG0 (a / amr-unknown)\n      :ARG1 (b / book\n            :name (n / name\n                  :op1 \"Farmers\"\n                  :op2 \"'\"\n                  :op3 \"Almanac\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"farmers' almanac\"\n\t\t\t\t:id \"b\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Farmers'_Almanac\")))\n\n",
+    "relations": [
+      "dbp:editor"
+    ],
+    "sparql": "PREFIX dbp: <http://dbpedia.org/property/> SELECT ?uri WHERE { <http://dbpedia.org/resource/Farmers'_Almanac> dbp:editor ?uri }"
+  },
+  "train_402": {
+    "id": "402",
+    "text": "Give me the currency of China.",
+    "extended_amr": "(g / give-01\n      :ARG0 (y / you)\n      :ARG1 (c / currency\n            :poss (c2 / country\n                  :name (n / name\n                        :op1 \"China\")))\n      :ARG2 (i / i)\n      :mode imperative\n      :mode imperative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"china\"\n\t\t\t\t:id \"c2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/China\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"currency\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Currency\")))\n\n",
+    "relations": [
+      "dbo:currency"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:China dbo:currency ?uri }"
+  },
+  "train_403": {
+    "id": "403",
+    "text": "Give me all Swedish oceanographers.",
+    "extended_amr": "(g / give-01\n      :ARG0 (y / you)\n      :ARG1 (o / oceanographer\n            :mod (c / country\n                  :name (n / name\n                        :op1 \"Sweden\"))\n            :mod (a / all))\n      :ARG2 (i / i)\n      :mode imperative\n      :mode imperative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"swedish oceanographers\"\n\t\t\t\t:id \"o\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Swedish_Maritime_Administration\")))\n\n",
+    "relations": [
+      "dbo:birthPlace",
+      "dbo:field"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:field res:Oceanography ; dbo:birthPlace res:Sweden }"
+  },
+  "train_404": {
+    "id": "404",
+    "text": "In which city are the headquarters of the United Nations?",
+    "extended_amr": "(b / be-located-at-91\n      :ARG1 (h / headquarters-yy\n            :poss (o / organization\n                  :name (n / name\n                        :op1 \"United\"\n                        :op2 \"nations\")))\n      :ARG2 (c / city\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"united nations\"\n\t\t\t\t:id \"o\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/United_Nations\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"city\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/City\")))\n\n",
+    "relations": [
+      "dbo:location"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Headquarters_of_the_United_Nations dbo:location ?uri . ?uri rdf:type dbo:City }"
+  },
+  "train_405": {
+    "id": "405",
+    "text": "Is Rita Wilson the wife of Tom Hanks?",
+    "extended_amr": "(p / person\n      :ARG0-of (h / have-rel-role-91\n            :ARG1 (p2 / person\n                  :name (n2 / name\n                        :op1 \"Tom\"\n                        :op2 \"Hanks\"))\n            :ARG2 (w / wife))\n      :mode interrogative\n      :name (n / name\n            :op1 \"Rita\"\n            :op2 \"Wilson\")\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"rita wilson\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Rita_Wilson\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"tom hanks\"\n\t\t\t\t:id \"p2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Tom_Hanks\")))\n\n",
+    "relations": [
+      "dbo:spouse"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Tom_Hanks dbo:spouse res:Rita_Wilson }"
+  },
+  "train_406": {
+    "id": "406",
+    "text": "In which countries do people speak Japanese?",
+    "extended_amr": "(s / speak-01\n      :ARG0 (p / person)\n      :ARG3 (l / language\n            :name (n / name\n                  :op1 \"Japanese\"))\n      :location (c / country\n            :mod (a / amr-unknown))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"japanese\"\n\t\t\t\t:id \"l\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Japanese_language\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"countries\"\n\t\t\t\t:id \"c\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Country\")))\n\n",
+    "relations": [
+      "dbo:language"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Country ; dbo:language res:Japanese_language }"
+  },
+  "train_407": {
+    "id": "407",
+    "text": "Which of Tim Burton's films had the highest budget?",
+    "extended_amr": "(h / have-03\n      :ARG0 (f / film\n            :mod (a / amr-unknown)\n            :poss (p / person\n                  :name (n / name\n                        :op1 \"Tim\"\n                        :op2 \"Burton\")))\n      :ARG1 (b / budget\n            :ARG1-of (h2 / have-degree-91\n                  :ARG3 (m / most)))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"tim burton's\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Tim_Burton\")))\n\n",
+    "relations": [
+      "dbo:director",
+      "dbo:budget"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:director res:Tim_Burton ; dbo:budget ?b } ORDER BY ?b OFFSET 0 LIMIT 1"
+  },
+  "train_408": {
+    "id": "408",
+    "text": "Which museum in New York has the most visitors?",
+    "extended_amr": "(h / have-03\n      :ARG0 (m / museum\n            :location (s / state\n                  :name (n / name\n                        :op1 \"New\"\n                        :op2 \"York\"))\n            :mod (a / amr-unknown))\n      :ARG1 (p / person\n            :ARG0-of (v / visit-01)\n            :ARG1-of (h2 / have-quant-91\n                  :ARG3 (m2 / most)))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"new york\"\n\t\t\t\t:id \"s\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/New_York_City\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"museum\"\n\t\t\t\t:id \"m\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Museum\")))\n\n",
+    "relations": [
+      "dbo:numberOfVisitors",
+      "dbo:location"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Museum ; dbo:location res:New_York_City ; dbo:numberOfVisitors ?num } ORDER BY DESC(?num) OFFSET 0 LIMIT 1"
+  },
+  "train_409": {
+    "id": "409",
+    "text": "What was the first Queen album?",
+    "extended_amr": "(a2 / album\n      :domain (a / amr-unknown)\n      :ord (o / ordinal-entity\n            :value 10)\n      :poss (o2 / organization\n            :name (n / name\n                  :op1 \"Queen\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"queen album\"\n\t\t\t\t:id \"a2\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/The_Queen_Album\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"album\"\n\t\t\t\t:id \"a2\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Album\")))\n\n",
+    "relations": [
+      "dbo:releaseDate",
+      "dbo:artist"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Album ; dbo:artist <http://dbpedia.org/resource/Queen_(band)> ; dbo:releaseDate ?d } ORDER BY ASC(?d) OFFSET 0 LIMIT 1"
+  },
+  "train_410": {
+    "id": "410",
+    "text": "What was the first name of the band Queens of the Stone Age?",
+    "extended_amr": "(n / name-01\n      :ARG1 (g / group\n            :name (n2 / name\n                  :op1 \"Queens\"\n                  :op2 \"Of\"\n                  :op3 \"The\"\n                  :op4 \"Stone\"\n                  :op5 \"Age\"))\n      :ARG2 (a / amr-unknown)\n      :ord (o / ordinal-entity\n            :value 10)\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"queens of\"\n\t\t\t\t:id \"g\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Queens_of_the_Stone_Age\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"stone age\"\n\t\t\t\t:id \"g\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Stone_Age\")\n\t\t:entity (all2/ linked_entity\n\t\t\t\t:surface_form \"name\"\n\t\t\t\t:id \"n\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Name\")))\n\n",
+    "relations": [
+      "dbo:alias"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?name WHERE { res:Queens_of_the_Stone_Age dbo:alias ?name }"
+  },
+  "train_411": {
+    "id": "411",
+    "text": "What was the last movie with Alec Guinness?",
+    "extended_amr": "(m / movie\n      :domain (a / amr-unknown)\n      :mod (l / last)\n      :prep-with (p / person\n            :name (n / name\n                  :op1 \"Alec\"\n                  :op2 \"Guinness\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"alec guinness\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Alec_Guinness\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"movie\"\n\t\t\t\t:id \"m\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Film\")))\n\n",
+    "relations": [
+      "dbo:releaseDate",
+      "dbo:starring"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Alec_Guinness ; dbo:releaseDate ?date } ORDER BY DESC(?date) LIMIT 1"
+  },
+  "train_412": {
+    "id": "412",
+    "text": "Give me all actors starring in Last Action Hero.",
+    "extended_amr": "(g / give-01\n      :ARG0 (y / you)\n      :ARG1 (p / person\n            :ARG0-of (a2 / act-01)\n            :ARG1-of (s / star-01\n                  :ARG2 (w / work-of-art\n                        :name (n / name\n                              :op1 \"Last\"\n                              :op2 \"Action\"\n                              :op3 \"Hero\")))\n            :mod (a / all))\n      :ARG2 (i / i)\n      :mode imperative\n      :mode imperative\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"last action hero\"\n\t\t\t\t:id \"w\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Last_Action_Hero\")\n\t\t:entity (all1/ linked_entity\n\t\t\t\t:surface_form \"actors\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:type \"nominal\"\n\t\t\t\t:uri \"http://dbpedia.org/ontology/Actor\")))\n\n",
+    "relations": [
+      "dbo:starring"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Last_Action_Hero dbo:starring ?uri }"
+  },
+  "train_413": {
+    "id": "413",
+    "text": "Who discovered Pluto?",
+    "extended_amr": "(d / discover-01\n      :ARG0 (a / amr-unknown)\n      :ARG1 (p / planet\n            :name (n / name\n                  :op1 \"Pluto\"))\n\t:entities ( el / entity_list\n\t\t:entity (all0/ linked_entity\n\t\t\t\t:surface_form \"pluto\"\n\t\t\t\t:id \"p\"\n\t\t\t\t:uri \"http://dbpedia.org/resource/Pluto\")))\n\n",
+    "relations": [
+      "dbo:discoverer"
+    ],
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?uri WHERE { dbr:Pluto dbo:discoverer ?uri }"
+  }
+}

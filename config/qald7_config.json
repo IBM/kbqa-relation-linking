@@ -1,0 +1,23 @@
+{
+  "dbpedia_endpoint": "<-- DBpedia 2016-04 endpoint -->",
+  "glove_embedding_path": "data/glove/GoogleNews-vectors-negative300.bin",
+  "glove_vocab": "data/glove/glove_vocab.pkl",
+  "predicate_map": "data/similarity/all_relationship_labels_lemma.tsv",
+  "answer_type_paths": "../data/answer-types.pkl",
+  "sparql_cache_path": "../data/sparql_cache/sparql_qald7.json",
+  "datatype_rels_path": "../data/datatype_relations.pkl",
+  "neural_model": {
+    "type": "ranking",
+    "rel_id_path": "data/lcquad/rel2id.json",
+    "ckpt_path": "data/lcquad/nre4qald_v4_10_bertentity_softmax.pth.tar",
+    "pretrain_path": "data/bert-base-uncased"
+  },
+  "statistical_mapping_file": "data/AMR_rel_map.pkl",
+  "module_weights": {
+    "kg_entity_recommender_scores": 1,
+    "contextual_rel_recommender_scores": 1,
+    "statistical_rel_mapping_scores": 0.5,
+    "neural_model_scores": 1,
+    "similarity_based_scores": 0
+  }
+}
