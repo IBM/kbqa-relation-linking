@@ -36,6 +36,23 @@ EAMR, the corresponding AMR graph with entity linking)
 
 For the three experiments, these files can be found in `data\input` and `config` directories.
  
+ # Publication 
+
+ Please use the following paper to refer to this work.
+ 
+ ```
+@inproceedings{mihindu-sling-2020,
+    title = "Leveraging Semantic Parsing for Relation Linking over Knowledge Bases",
+    author = "Mihindukulasooriya, Nandana and Rossiello, Gaetano and Kapanipathi, Pavan and Abdelaziz, Ibrahim and Ravishankar, Srinivas and Yu, Mo and Gliozzo, Alfio and Roukos, Salim and Gray, Alexander",
+    booktitle="The Semantic Web -- ISWC 2020",
+    year="2020",
+    publisher="Springer International Publishing",
+    address="Cham",
+    pages="402--419",
+    url = "https://link.springer.com/chapter/10.1007/978-3-030-62419-4_23",
+    doi = "10.1007/978-3-030-62419-4_23"
+}
+```
  
  # License
   
