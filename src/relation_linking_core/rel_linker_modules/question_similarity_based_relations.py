@@ -7,7 +7,7 @@ import re
 import pickle
 
 from nltk.tokenize import RegexpTokenizer, WordPunctTokenizer
-from fuzzywuzzy import fuzz
+from rapidfuzz import process, fuzz
 
 from relation_linking_core.rel_linker_modules.rel_linker_module import RelModule
 
@@ -104,13 +104,10 @@ class FuzzyWuzzySimilarityCalc:
             context_ngram_tokens = [context_tokens[i:i + rel_tokens_size] for i in
                                     range(len(context_tokens) - rel_tokens_size + 1)]
             context_tokens = context_ngram_tokens
-        max_similarity = 0
-        for c_token in context_tokens:
-            sim = fuzz.token_sort_ratio(relation_label, c_token)
-            if sim > max_similarity:
-                max_similarity = sim
-        if max_similarity == 100:
-            return max_similarity * rel_tokens_size / 100
+
+        if process.extractOne(relation_label, context_tokens,
+                              scorer=fuzz.token_sort_ratio, score_cutoff=100):
+            return rel_tokens_size
         return 0
 
     def extract(self, context, relationList):
