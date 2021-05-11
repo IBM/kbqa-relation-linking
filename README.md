@@ -5,9 +5,9 @@
  
  * GoogleNews-vectors-negative300.bin.gz,.the word2vec pre-trained Google News corpus (3 billion running words) word vector model. Please download it from [here](https://github.com/mmihaltz/word2vec-GoogleNews-vectors).
  
- * glove_vocab.pkl file from [here](https://ibm.box.com/s/huox6kau50ceqanqso3z97g8lg9z0ho5)
+ * glove_vocab.pkl file from [here](https://ibm.box.com/shared/static/enypfspmgud36yq51al6fsb92whghj1n.pkl)
  
- * OpenNRE trained model from [upload it somewhere](https://ibm.box.com/s/nd0v0ln1u5apl9uejac079pli1pz3p2p)
+ * OpenNRE trained model from [here](https://ibm.box.com/shared/static/osrjncz0mhap3s0sz1uxqjjjez6485fa.zip)
  
  The other data files that are used are provided in this repository itself. 
  
