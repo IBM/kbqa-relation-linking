@@ -1,44 +1,25 @@
-# KBQA Relation Linking
+# KBQA Relation Linking Projects
 
-# Prerequisites
- Please download the following files into your machine before running the service. There paths are set in the configuration file.
- 
- * GoogleNews-vectors-negative300.bin.gz,.the word2vec pre-trained Google News corpus (3 billion running words) word vector model. Please download it from [here](https://github.com/mmihaltz/word2vec-GoogleNews-vectors).
- 
- * glove_vocab.pkl file from [here](https://ibm.box.com/shared/static/enypfspmgud36yq51al6fsb92whghj1n.pkl)
- 
- * OpenNRE trained model from [here](https://ibm.box.com/shared/static/osrjncz0mhap3s0sz1uxqjjjez6485fa.zip)
- 
- The other data files that are used are provided in this repository itself. 
- 
- The dependencies that are required to run the system are listed in `requirements.txt`.
- 
- 
- # Configuration 
- 
-The KBQA relation linking service is requires a configuration file that specifies the different data files and settings used by the service. `config` directory contains 
-the configuration files for QALD-7, QALD-9, and LC-QuAD 1.0 experiments.
+This repo contains several KBQA relation linking projects.
 
-Please check the paths to files you downloaded are correctly set in the configuration.
- 
- 
- # Evaluation script 
- 
-The evaluation script is at `src/evaluation/local_evaluation.py`. Please set the working directory to `src` so that all
-relative paths are resolved correctly.
+ # Publications
 
-It requires the two parameters:
- 
-* --config_path path to the configuration file to run the service.
+# GenRL (ISWC 2021)
 
-* --input_path path to the input file containing the input to the system (i.e., the question text and the 
-EAMR, the corresponding AMR graph with entity linking)
+ ```
+@inproceedings{rossiello-genrl-2021,
+  title={Generative relation linking for question answering over knowledge bases},
+  author={Rossiello, Gaetano and Mihindukulasooriya, Nandana and Abdelaziz, Ibrahim and Bornea, Mihaela and Gliozzo, Alfio and Naseem, Tahira and Kapanipathi, Pavan},
+  booktitle={International Semantic Web Conference},
+  pages={321--337},
+  year={2021},
+  organization={Springer},
+  url = "https://link.springer.com/chapter/10.1007/978-3-030-88361-4_19",
+  doi = "10.1007/978-3-030-88361-4_19"
+}
+```
 
-For the three experiments, these files can be found in `data\input` and `config` directories.
- 
- # Publication 
-
- Please use the following paper to refer to this work.
+# SLING (ISWC 2020)
  
  ```
 @inproceedings{mihindu-sling-2020,
@@ -56,4 +37,4 @@ For the three experiments, these files can be found in `data\input` and `config`
  
  # License
   
- This work is released under Apache 2.0 license. 
+ This work is released under Apache 2.0 license.

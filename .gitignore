@@ -1,6 +1,7 @@
 # Directories #
 /build/
 /bin/
+/venv/
 target/
 
 # OS Files #
