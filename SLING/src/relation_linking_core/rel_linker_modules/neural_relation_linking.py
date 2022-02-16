@@ -13,10 +13,11 @@ class NeuralRelationLinking(RelModule):
     question_terms = ['what', 'when', 'which', 'who', 'how', 'list', 'give', 'show', 'do', 'does']
 
     def __init__(self, config):
-        rel_id_path = "/Users/nandana.sampath.mihindukulasooriya@ibm.com/Src/relation-linking/data/lcquad/rel2id.json"
+        self.config = config
+        rel_id_path = self.config['neural_model']['rel_id_path']
         rel2id = json.load(open(rel_id_path))
-        pretrain_path = "/Users/nandana.sampath.mihindukulasooriya@ibm.com/Src/relation-linking/data/bert-base-uncased"
-        ckpt_path = "/Users/nandana.sampath.mihindukulasooriya@ibm.com/Src/relation-linking/data/lcquad/nre4qald_v4_10_bertentity_softmax.pth.tar"
+        pretrain_path = self.config['neural_model']['pretrain_path']
+        ckpt_path = self.config['neural_model']['ckpt_path']
 
         sentence_encoder = BERTEntityEncoder(max_length=80, pretrain_path=pretrain_path)
 
