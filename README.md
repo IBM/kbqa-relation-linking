@@ -6,7 +6,7 @@ This repo contains several KBQA relation linking projects.
 
 # GenRL (ISWC 2021)
 
- ```
+ ```bibtex
 @inproceedings{rossiello-genrl-2021,
   title={Generative relation linking for question answering over knowledge bases},
   author={Rossiello, Gaetano and Mihindukulasooriya, Nandana and Abdelaziz, Ibrahim and Bornea, Mihaela and Gliozzo, Alfio and Naseem, Tahira and Kapanipathi, Pavan},
@@ -21,7 +21,7 @@ This repo contains several KBQA relation linking projects.
 
 # SLING (ISWC 2020)
  
- ```
+ ```bibtex
 @inproceedings{mihindu-sling-2020,
     title = "Leveraging Semantic Parsing for Relation Linking over Knowledge Bases",
     author = "Mihindukulasooriya, Nandana and Rossiello, Gaetano and Kapanipathi, Pavan and Abdelaziz, Ibrahim and Ravishankar, Srinivas and Yu, Mo and Gliozzo, Alfio and Roukos, Salim and Gray, Alexander",
