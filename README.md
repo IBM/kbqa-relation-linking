@@ -4,7 +4,7 @@ This repo contains several KBQA relation linking projects.
 
  # Publications
 
-# GenRL (ISWC 2021)
+### GenRL (ISWC 2021)
 
  ```bibtex
 @inproceedings{rossiello-genrl-2021,
@@ -19,7 +19,7 @@ This repo contains several KBQA relation linking projects.
 }
 ```
 
-# SLING (ISWC 2020)
+### SLING (ISWC 2020)
  
  ```bibtex
 @inproceedings{mihindu-sling-2020,
@@ -34,7 +34,7 @@ This repo contains several KBQA relation linking projects.
     doi = "10.1007/978-3-030-62419-4_23"
 }
 ```
- 
+
  # License
   
  This work is released under Apache 2.0 license.
