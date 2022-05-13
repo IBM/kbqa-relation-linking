@@ -36,4 +36,27 @@ python seq2seq.py --test_file data/simpleq/simpleq_test.json --model_name gaetan
 ```
 
 ### Knowledge Validation
-TODO
+
+In order to run the knowledge validation, the users will need SPARQL endpoints loaded correct with version of datasets: QALD-9 (DBpedia 2016-10), LC-QuAD 1.0 (DBpedia 2016-04), LC-QuAD 2.0 (Wikidata), and Simple Questions (Wikidata). 
+
+QALD-9
+```
+python knowledge_val.py --model_output data/qald9/qald9_test_GenRL.json --val_cache qald9_cache.json --sparql_endpoint $dbpedia_2016_10$ --val_output data/qald9/qald9_test_validated.json
+```
+
+LC-QuAD 1.0
+```
+python knowledge_val.py --model_output data/lcquad1/lcquad1_test_GenRL.json --val_cache lcquad1_cache.json --sparql_endpoint $dbpedia_2016_04$ --val_output data/lcquad1/lcquad1_test_validated.json
+```
+
+LC-QuAD 2.0
+```
+python knowledge_val.py --model_output data/lcquad2/lcquad1_test_GenRL.json --val_cache lcquad1_cache.json --sparql_endpoint $wikidata_endpoint$  --val_output data/qald9/lcquad1_test_validated.json
+```
+
+Simple Questions
+```
+python knowledge_val.py --model_output data/simpleq/simpleq_test_GenRL.json --val_cache simpleq_cache.json --sparql_endpoint $wikidata_endpoint$ --val_output data/simpleq/simpleq_test_validated.json
+```
+
+### Evaluation
