@@ -307,10 +307,10 @@ def original_sent_extractor_worker(thread_id, sparql_limit, sentence_limit):
             if exists(output_file):
                 continue
 
-            if exists("/Users/nandana.sampath.mihindukulasooriya@ibm.com/Src/relation-linking/data/lc-qald/sent_completed/v3/" + file_name):
+            if exists("output_path" + file_name):
                 continue
 
-            if exists("/Users/nandana.sampath.mihindukulasooriya@ibm.com/Src/relation-linking/data/lc-qald/sent_amr_done/v3/" + file_name):
+            if exists("output_path" + file_name):
                 continue
 
             start_time = time.time()
